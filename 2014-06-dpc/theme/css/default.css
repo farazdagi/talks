@@ -1215,6 +1215,10 @@ article.smaller q:before, article.smaller q:after {
   width: 320px;
   height: 197px;
 }
+.logolast img {
+  width: 400px;
+  height: 400px;
+}
 
 /* line 809, ../scss/default.scss */
 .segue {
