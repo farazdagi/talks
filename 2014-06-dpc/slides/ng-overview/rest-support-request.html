@@ -1,0 +1,36 @@
+<slide>
+    <hgroup>
+        <h2>REST Support - $resource</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>Define your RESTful Resource:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+angular.module('demoApp', ['ngResource', 'ngRoute'])
+  .factory('Event', function ($resource) {
+    return $resource('https://api.rest.tickets/secured/events/:id');
+  });</pre>
+    <h3>Consume $resource-enabled service:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+angular.module('demoApp')
+  .controller('EventsCtrl', function ($scope, Event) {
+    // GET /secured/events?foo=bar
+    Event.query({'count': 10}, function (data) {
+      $scope.events = data;
+    });
+    // GET /secured/events/42
+    Event.get({id: 42}, function (data) {});
+    // POST /secured/events with `data` as payload
+    Event.save(data);
+    // DELETE /secured/events/42
+    Event.delete({id: 42});
+  });</pre>
+
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>

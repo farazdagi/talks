@@ -1,0 +1,16 @@
+<slide>
+    <hgroup>
+        <h2>{% block title %}{% endblock %}</h2>
+    </hgroup>
+    <article class="{% block style %}{% endblock %}">
+        {% block content %}{% endblock %}
+    </article>
+    <fgroup>
+        <h3>{% block footer %}{% endblock %}</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            {% block notes %}{% endblock %}
+        </section>
+    </aside>
+</slide>

@@ -1,0 +1,39 @@
+<slide>
+    <hgroup>
+        <h2>Promises: Deferred API</h2>
+    </hgroup>
+    <article class="smaller">
+            <pre class="prettyprint" data-lang="javascript">
+function asyncGreet(name) {
+    var deferred = $q.defer();
+
+    setTimeout(function() {
+      scope.$apply(function() {  // make sure that changes are observed
+        deferred.notify('About to greet ' + name + '.');
+
+        if (okToGreet(name)) {
+          deferred.resolve('Hello, ' + name + '!');
+        } else {
+          deferred.reject('Greeting ' + name + ' is not allowed.');
+        }
+      });
+    }, 1000);
+
+    return deferred.promise;
+}
+
+var promise = asyncGreet('Robin Hood');
+promise.then(
+    function(greeting) { alert('Success: ' + greeting); },
+    function(reason) { alert('Failed: ' + reason); },
+    function(update) { alert('Got notification: ' + update); }
+);</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>

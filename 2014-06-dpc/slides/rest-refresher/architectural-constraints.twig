@@ -1,0 +1,23 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Architectural Constraints' %}
+{% block style '' %}
+{% block footer 'Part 2: REST Refresher Course' %}
+
+{% block content %}
+    <h3>REST Architectural Constraints:</h3>
+    <ul class="build fade">
+        <li>Client-server</li>
+        <li>Stateless</li>
+        <li>Cacheable</li>
+        <li>Layered System</li>
+        <li>
+            Uniform Interface
+            <ul>
+                <li>Identification of resources</li>
+                <li>Manipulation of resources through representations</li>
+                <li>Self-descriptive messages</li>
+                <li>Hypermedia as the engine of application state (HATEOAS)</li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}

@@ -25,9 +25,9 @@ var SLIDE_CONFIG = {
   presenters: [{
     name: 'Victor Farazdagi',
     company: 'Software Engineer<br>Square Labs',
-    gplus: 'https://www.google.com/+VictorFarazdagi',
+//    gplus: 'https://www.google.com/+VictorFarazdagi',
     twitter: '@farazdagi',
-    www: 'http://www.farazdagi.com',
+    www: 'farazdagi.com',
     github: 'http://github.com/farazdagi'
   }/*, {
     name: 'Second Name',

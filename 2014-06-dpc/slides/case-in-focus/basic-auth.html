@@ -1,0 +1,30 @@
+<slide>
+    <hgroup>
+        <h2>Basic Auth</h2>
+    </hgroup>
+    <article class="">
+            <h3>Server wants client to authenticate itself:</h3>
+    <pre class="prettyprint" data-lang="">
+        401 Unauthorized
+        WWW-Authenticate: Basic realm="Secure Area"</pre>
+
+    <h3>Client uses Authorization: header to provide credentials:</h3>
+    <pre class="prettyprint" data-lang="">
+        Authorization: Basic base64_encode("username:password")</pre>
+
+    <h3>Notes:</h3>
+    <ul>
+        <li>Browser is responsible for preserving/caching of credentials</li>
+        <li>For how long do credentials get cached - browser-dependent.</li>
+        <li>If client knows that page is protected, it can include identify itself immediately</li>
+        <li>Run this thing behind the SSL.</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>

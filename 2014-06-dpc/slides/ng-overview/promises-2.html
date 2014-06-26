@@ -1,0 +1,30 @@
+<slide>
+    <hgroup>
+        <h2>Callback Hell</h2>
+    </hgroup>
+    <article class="">
+            <h3>Problem: Synchronize multiple asynchronous functions.</h3>
+    <h3>Solution (sort of):</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// see http://fdietz.github.io/recipes-with-angular-js
+// for more amazing examples
+tmp = [];
+$http.get("/app/data/first.json").success(function(data) {
+  tmp.push(data);
+  $http.get("/app/data/second.json").success(function(data) {
+    tmp.push(data);
+    $http.get("/app/data/third.json").success(function(data) {
+      tmp.push(data);
+      $scope.combinedNestedResult = tmp.join(", ");
+    });
+  });
+});</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>

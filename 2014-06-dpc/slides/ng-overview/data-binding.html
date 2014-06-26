@@ -1,0 +1,31 @@
+<slide>
+    <hgroup>
+        <h2>Data Binding</h2>
+    </hgroup>
+    <article class="">
+            <h3>Setup view:</h3>
+    <pre class="prettyprint" data-lang="html">
+&lt;div class="jumbotron">
+    &lt;p ng-show="name">Hello, {{ name }}&lt;/p>
+    &lt;input type="text" ng-model="name"/>
+&lt;/div></pre>
+
+    <h3>Setup scope:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/controllers/main.js
+angular.module('demoApp')
+  .controller('MainCtrl', function ($scope) {
+    $scope.name = 'Alex';
+  });</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <ul>
+        <li>yo angular - will take some time to setup correctly.</li>
+    </ul>
+        </section>
+    </aside>
+</slide>

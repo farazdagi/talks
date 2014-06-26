@@ -8,175 +8,1088 @@ URL: https://code.google.com/p/io-2012-slides
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-        <!--This one seems to work all the time, but really small on ipad-->
-        <!--<meta name="viewport" content="initial-scale=0.4">-->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" media="all" href="theme/css/default.css">
-        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
-        <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-        <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
-    </head>
-    <body style="opacity: 0">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--This one seems to work all the time, but really small on ipad-->
+    <!--<meta name="viewport" content="initial-scale=0.4">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" media="all" href="theme/css/default.css">
+    <link rel="stylesheet" media="all" href="theme/css/custom.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+    <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+    <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
 
-        <slides class="layout-widescreen">
+<slides class="layout-widescreen">
 
-        <slide class="logoslide nobackground">
-        <article class="flexbox vcenter">
+<slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
         <span><img src="images/dpc_logo.png" /></span>
-        </article>
-        </slide>
-
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <slide class="title-slide segue nobackground">
-        <aside class="gdbar"><img src="images/dpc_favicon.ico"></aside>
-        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-        <hgroup class="auto-fadein">
+    </article>
+</slide>
+<slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/dpc_favicon.ico"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
         <h1 data-config-title><!-- populated from slide_config.json --></h1>
         <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
         <p data-config-presenter><!-- populated from slide_config.json --></p>
-        </hgroup>
-        </slide>
-
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <slide>
-        <aside class="note">
+    </hgroup>
+</slide>
+<slide>
+    <hgroup>
+        <h2>About the Author</h2>
+    </hgroup>
+    <article class="smaller">
+            <p>
+        Academic:<br />
+    <ul>
+        <li>BA in Political Sci. &amp; Int. Relations from Bosphorus Univ.</li>
+        <li>BS in CS from Oregon State Univ.</li>
+        <li>MSCS Student @ Georgia Tech.</li>
+    </ul>
+    </p>
+    <p>
+        Open Source:<br />
+    <ul>
+        <li>ZF2 Contributor</li>
+        <li>Phing Contributor</li>
+        <li>Original Author of Phrozn</li>
+    </ul>
+    </p>
+    <p>
+        Conferences:<br />
+    <ul>
+        <li>Zend Framework Day 2010, 2011 (Kiev, Ukraine)</li>
+        <li>ZF Conf Russia 2012 (Moscow, Russia)</li>
+        <li>EuroPython 2014 (Berlin, Germany)</li>
+    </ul>
+    </p>
+    </article>
+    <fgroup>
+        <h3>Introduction</h3>
+    </fgroup>
+    <aside class="note">
         <section>
-        <ul>
-            <li>ZF2 Last commit: Nov 9, 2011</li>
-        </ul>
-        <p><b>As you see I stopped doing anything, and started talking about it..</b></p>
+                <ul>
+        <li>Testing notes</li>
+        <li>The ZF2 Last commit: Nov 9, 2011</li>
+        <li><b>As you see I stopped doing anything, and started talking about it..</b></li>
+    </ul>
         </section>
-        </aside>
-        <hgroup>
-        <h2>About Me</h2>
-        </hgroup>
-        <article>
-        <ul>
-            Academic:<br />
-            <ul>
-                <li>BA in Political Sci. &amp; Int. Relations from Bosphorus Univ.</li>
-                <li>BS in CS from Oregon State Univ.</li>
-                <li>Currently: MSCS Student @ Georgia Tech.</li>
-            </ul>
-        </ul>
-        <ul>
-            Open Source:<br />
-            <ul>
-                <li>ZF2 Contributor</li>
-                <li>Phing Contributor</li>
-                <li>Original Author of Phrozn</li>
-            </ul>
-        </ul>
-        </article>
-        </slide>
-
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <slide>
-        <aside class="note">
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Presentation Outline</h2>
+    </hgroup>
+    <article class="biggest">
+            <ul class="build fade">
+        <li>AngularJS Overview</li>
+        <li>REST: Refresher Course</li>
+        <li>Use Case in Focus: Authentication</li>
+        <li>Common Problems (with Solutions)</li>
+        <li>Concluding Remarks</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Introduction</h3>
+    </fgroup>
+    <aside class="note">
         <section>
-        <p>
-        </p>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Sample Application Setup</h2>
+    </hgroup>
+    <article class="biggest">
+            <ul class="build fade">
+        <li>Setup is done using Vagrant + Ansible</li>
+        <li>
+            3 nodes, 3 separate protection domains
+            <ul>
+                <li>App Server</li>
+                <li>DB Server</li>
+                <li>API Server</li>
+            </ul>
+        </li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Introduction</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+
+<!-- Section 1 -->
+<slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/dpc_favicon.ico"></aside>
+    <hgroup class="auto-fadein">
+        <h3>Part 1</h3>
+        <h2>AngularJS Overview</h2>
+    </hgroup>
+</slide>
+        <slide class="fill nobackground" style="background-image: url(images/cape-buffalo.jpg)">
+    <hgroup>
+        <h2 class="white"></h2>
+    </hgroup>
+    <footer class="source white">http://thatguywiththeglasses.com/blogs/latest/entry/dangerous-creatures-cape-buffalo</footer>
+    <aside class="note">
+        <section>
+                <h2>How to stop a charging buffalo?</h2>
+
         </section>
-        </aside>
-        <hgroup>
-        <h2>Outline</h2>
-        </hgroup>
-        <article>
-        <ul>
-            <li>Introduction</li>
-            <li>REST Refresher</li>
-            <li>Sample AngularJS Application</li>
-            <li>Use Cases</li>
-            <li>Concluding Remarks</li>
-        </ul>
-        </article>
-        </slide>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Top 5 Killer Features of AngularJS</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul class="build fade">
+        <li>Modularity</li>
+        <li>Dependency Injection</li>
+        <li>Data binding</li>
+        <li>REST $resource</li>
+        <li>Amazing use of Promises API</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Modularity</h2>
+    </hgroup>
+    <article class="">
+            <h3>Define your service:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/services/test.js
+angular.module('demoApp')
+  .service('Test', function Test() {
+    this.yell = function () {
+      console.log('hello!');
+    };
+  });</pre>
 
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <h3>Use the service:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/controllers/main.js
+angular.module('demoApp')
+  .controller('MainCtrl', function ($scope, Test) {
+    Test.yell();
+  });</pre>
+
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Data Binding</h2>
+    </hgroup>
+    <article class="">
+            <h3>Setup view:</h3>
+    <pre class="prettyprint" data-lang="html">
+&lt;div class="jumbotron">
+    &lt;p ng-show="name">Hello, {{ name }}&lt;/p>
+    &lt;input type="text" ng-model="name"/>
+&lt;/div></pre>
+
+    <h3>Setup scope:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/controllers/main.js
+angular.module('demoApp')
+  .controller('MainCtrl', function ($scope) {
+    $scope.name = 'Alex';
+  });</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <ul>
+        <li>yo angular - will take some time to setup correctly.</li>
+    </ul>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>REST Support - $http</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>Nothing fancy (on surface):</h3>
+    <pre class="prettyprint" data-lang="javascript">
+$http({method: 'GET', url: '/someUrl'}).
+    success(function(data, status, headers, config) {
+      // this callback will be called asynchronously
+      // when the response is available
+    }).
+    error(function(data, status, headers, config) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });</pre>
+    <h3>Until we realize that <code>$http</code> returns promise:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+var responsePromise = $http.get('/someUrl');
+responsePromise.
+    then(function (response) { // promise resolved
+      $scope.data = response.foo;
+    }, function (reason) { // promise rejected
+      throw new Error(reason);
+    });</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>REST Support - $resource</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>Define your RESTful Resource:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+angular.module('demoApp', ['ngResource', 'ngRoute'])
+  .factory('Event', function ($resource) {
+    return $resource('https://api.rest.tickets/secured/events/:id');
+  });</pre>
+    <h3>Consume $resource-enabled service:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+angular.module('demoApp')
+  .controller('EventsCtrl', function ($scope, Event) {
+    // GET /secured/events?foo=bar
+    Event.query({'count': 10}, function (data) {
+      $scope.events = data;
+    });
+    // GET /secured/events/42
+    Event.get({id: 42}, function (data) {});
+    // POST /secured/events with `data` as payload
+    Event.save(data);
+    // DELETE /secured/events/42
+    Event.delete({id: 42});
+  });</pre>
+
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Promises: Deferred API</h2>
+    </hgroup>
+    <article class="smaller">
+            <pre class="prettyprint" data-lang="javascript">
+function asyncGreet(name) {
+    var deferred = $q.defer();
+
+    setTimeout(function() {
+      scope.$apply(function() {  // make sure that changes are observed
+        deferred.notify('About to greet ' + name + '.');
+
+        if (okToGreet(name)) {
+          deferred.resolve('Hello, ' + name + '!');
+        } else {
+          deferred.reject('Greeting ' + name + ' is not allowed.');
+        }
+      });
+    }, 1000);
+
+    return deferred.promise;
+}
+
+var promise = asyncGreet('Robin Hood');
+promise.then(
+    function(greeting) { alert('Success: ' + greeting); },
+    function(reason) { alert('Failed: ' + reason); },
+    function(update) { alert('Got notification: ' + update); }
+);</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Callback Hell</h2>
+    </hgroup>
+    <article class="">
+            <h3>Problem: Synchronize multiple asynchronous functions.</h3>
+    <h3>Solution (sort of):</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// see http://fdietz.github.io/recipes-with-angular-js
+// for more amazing examples
+tmp = [];
+$http.get("/app/data/first.json").success(function(data) {
+  tmp.push(data);
+  $http.get("/app/data/second.json").success(function(data) {
+    tmp.push(data);
+    $http.get("/app/data/third.json").success(function(data) {
+      tmp.push(data);
+      $scope.combinedNestedResult = tmp.join(", ");
+    });
+  });
+});</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Promises: Avoid Callback Hell</h2>
+    </hgroup>
+    <article class="">
+            <h3>Aggregating promises:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+var first  = $http.get("/app/data/first.json"),
+    second = $http.get("/app/data/second.json"),
+    third  = $http.get("/app/data/third.json");
+
+$q.all([first, second, third]).
+    then(function(result) {
+      var tmp = [];
+      angular.forEach(result, function(response) {
+        tmp.push(response.data);
+      });
+      return tmp;
+    }).
+    then(function(tmpResult) {
+      $scope.combinedResult = tmpResult.join(", ");
+    });</pre>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Tools Infrastructure</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul cclass="build fade">
+        <li>
+            Yeoman:
+            <ul>
+                <li>yo - scaffolding tool</li>
+                <li>bower - package management</li>
+                <li>grunt - the build tool</li>
+            </ul>
+        </li>
+        <li>
+            Jasmine + Karma for testing.
+        </li>
+        <li>
+            Batarang chrome extension.
+        </li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <ul>
+        <li>yo angular - will take some time to setup correctly.</li>
+    </ul>
+        </section>
+    </aside>
+</slide>
+
+
+
+<!-- Section 2 -->
+<slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/dpc_favicon.ico"></aside>
+    <hgroup class="auto-fadein">
+        <h3>Part 2</h3>
+        <h2>REST: Refresher Course</h2>
+    </hgroup>
+</slide>
         <slide>
-        <hgroup>
-        <h2>Part I: Introduction</h2>
-        </hgroup>
-        <article>
-            <p>WILL cover:</p>
+    <hgroup>
+        <h2>Brief History of REST</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul cclass="build fade">
+        <li>Fielding's dissertation <div style="float: right; font-size: 0.6em;">sorry, I know that everybody mentions it!</div></li>
+        <li>
+            Some ACM papers stats (not very representative!):
             <ul>
-                <li>REST basics (very short refresher)</li>
-                <li>Introduction to AngularJS</li>
-                <li>How to build RESTful back-end for the AngularJS App</li>
-                <li>Some rather advanced REST concepts</li>
+                <li><code>REST</code> keyword is in 200K+ papers</li>
+                <li><code>RESTful</code> keyword is in 2K+ papers</li>
             </ul>
-            <p>WILL NOT cover:</p>
+        </li>
+        <li>
+            Many books on topic (both from academic - hello Prof. Pautasso - and expert perspectives)
+        </li>
+        <li>
+            Countless of talks, presentations, and tutorial sessions (not that amazing as this one!).
+        </li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 2: REST Refresher Course</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Thinking in Resources</h2>
+    </hgroup>
+    <article class="">
+            <ul cclass="build fade">
+        <li>Resource := type + associated data + relationships + methods</li>
+        <li>Resource Types</li>
+        <li>
+            Resources and Identifiers
             <ul>
-                <li>Best practices for SPAs</li>
-                <li>AngularJS advanced concepts</li>
+                <li>URIs &amp; URLs</li>
             </ul>
-        </article>
-        </slide>
+        </li>
+        <li>
+            Resources and Representations
+        </li>
+        <li>
+            Representation Encoding Formats:
+            <ul>
+                <li>JSON</li>
+                <li>XML</li>
+            </ul>
+        </li>
+        <li>Resource Relationships</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 2: REST Refresher Course</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>HATEOAS</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+        <li>HATEOAS := Hypertext As The Engine Of Application State.</li>
+        <li>State machine with no prior knowledge of possible states.</li>
+        <li>Crucial part of Uniform Interface constraint.</li>
+        <li>Almost totally ignored by all API providers (this slowly changes).</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 2: REST Refresher Course</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Architectural Constraints</h2>
+    </hgroup>
+    <article class="">
+            <h3>REST Architectural Constraints:</h3>
+    <ul class="build fade">
+        <li>Client-server</li>
+        <li>Stateless</li>
+        <li>Cacheable</li>
+        <li>Layered System</li>
+        <li>
+            Uniform Interface
+            <ul>
+                <li>Identification of resources</li>
+                <li>Manipulation of resources through representations</li>
+                <li>Self-descriptive messages</li>
+                <li>Hypermedia as the engine of application state (HATEOAS)</li>
+            </ul>
+        </li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 2: REST Refresher Course</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Methods</h2>
+    </hgroup>
+    <article class="">
+            <table>
+        <thead>
+        <tr>
+            <th>
+                Method
+            </th>
+            <th>
+                https://api.rest.tickets/events
+            </th>
+            <th>
+                https://api.rest.tickets/events/42
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>GET</td>
+            <td>
+                List collection members.
+            </td>
+            <td>
+                Get member representation.
+            </td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>
+                Replace collection.
+            </td>
+            <td>
+                Replace the addressed member.
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>
+                Add new member.
+            </td>
+            <td>
+                Not used (if resource is not a collection itself).
+            </td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>
+                Delete entire collection.
+            </td>
+            <td>
+                Delete the addressed member.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </article>
+    <fgroup>
+        <h3>Part 2: REST Refresher Course</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Status Codes</h2>
+    </hgroup>
+    <article class="">
+            <h3>Bare minimum status codes:</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Method</th>
+            <th>On Success</th>
+            <th>On Failure</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>GET</td>
+            <td>
+                200 Ok
+            </td>
+            <td>
+                400 Bad Request<br />
+                404 Not Found
+            </td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>
+                200 Ok + representation<br />
+                204 No Content
+            </td>
+            <td>
+                400 Bad Request<br/>
+                404 Not Found
+            </td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>
+                204 No Content
+            </td>
+            <td>
+                400 Bad Request<br />
+                404 Not Found<br />
+                410 Gone<br />
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>
+                201 Created + Location
+            </td>
+            <td>
+                400 Bad Request
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </article>
+    <fgroup>
+        <h3>Part 2: REST Refresher Course</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
 
-        <slide hidden>
-        I expect you to know the basics (status codes)
-        </slide>
-
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- Section 3 -->
+<slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/dpc_favicon.ico"></aside>
+    <hgroup class="auto-fadein">
+        <h3>Part 3</h3>
+        <h2>Case in Focus: Authorization</h2>
+    </hgroup>
+</slide>
         <slide>
-        <hgroup>
-        <h2>Part II: REST Basics</h2>
-        </hgroup>
-        <article>
-            <ul>
-                <li>Brief History of REST</li>
-                <li>Resources and Representations</li>
-                <li>Representation Format</li>
-                <li>Media Types</li>
-                <li>Methods</li>
-                <li>Response Status Codes</li>
-                <li>CRUD Web Services</li>
-            </ul>
-        </article>
-        </slide>
+    <hgroup>
+        <h2>Challenges</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul class="build">
+        <li>Authentication is really hard (I MEAN it)</li>
+        <li>Browser restrictions</li>
+        <li>Plethora of competing specs</li>
+        <li>Keeping private keys private</li>
+        <li>Use standards, auth is not a nice sandbox for creativity</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Same Origin Policy</h2>
+    </hgroup>
+    <article class="bigger">
+            <h3>Possible Solutions:</h3>
 
-        <slide class="thank-you-slide segue nobackground">
-        <aside class="gdbar right"><img src="images/dpc_favicon.ico"></aside>
-        <article class="flexbox vleft auto-fadein">
-        <h2>&lt;Thank You!&gt;</h2>
-        <p>Important contact information goes here.</p>
-        </article>
-        <p class="auto-fadein" data-config-contact>
+    <ul class="build fade">
+        <li>JSONP</li>
+        <li>Proxy</li>
+        <li>CORS (Cross Origin Resource Sharing)</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Client/Server: Communicating secrets</h2>
+    </hgroup>
+    <article class="">
+            <h3>Possible ways to communicate secret from client to server:</h3>
+    <ul>
+        <li>HTTPS + BASIC authentication ("Authorization: Basic ..." header in each request)</li>
+        <li>Signing requests Amazon-style ("Authorization: AWS ... " header in each request)</li>
+        <li>OAuth: acquire Access Token, include that and a bunch of other parameters in each request</li>
+        <li>Cookie that stores session key ("Cookie: ... " header in each request)</li>
+        <li>Signed cookie that stores session information in the cookie itself</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Basic Auth</h2>
+    </hgroup>
+    <article class="">
+            <h3>Server wants client to authenticate itself:</h3>
+    <pre class="prettyprint" data-lang="">
+        401 Unauthorized
+        WWW-Authenticate: Basic realm="Secure Area"</pre>
+
+    <h3>Client uses Authorization: header to provide credentials:</h3>
+    <pre class="prettyprint" data-lang="">
+        Authorization: Basic base64_encode("username:password")</pre>
+
+    <h3>Notes:</h3>
+    <ul>
+        <li>Browser is responsible for preserving/caching of credentials</li>
+        <li>For how long do credentials get cached - browser-dependent.</li>
+        <li>If client knows that page is protected, it can include identify itself immediately</li>
+        <li>Run this thing behind the SSL.</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Digest Auth</h2>
+    </hgroup>
+    <article class="">
+            <h3>Server wants client to authenticate itself:</h3>
+    <pre class="prettyprint" data-lang="">
+        401 Unauthorized
+        WWW-Authenticate: Digest realm="Secure Area" nonce="md5 hash" qop="auth"</pre>
+
+    <h3>Client need to respond with Authorization: containing hashed secret:</h3>
+    <pre class="prettyprint" data-lang="">
+        Authorization: Digest username="client1", realm="Secure Area",
+            nonce="server nonce", response="hashed secret will be here",
+            cnonce="client nonce", uri="/events" nc=000000001, qop="auth"</pre>
+
+    <h3>Notes:</h3>
+    <ul>
+        <li>A1 = md5(username + realm + secret)</li>
+        <li>A2 = md5(method + uri) or A2 = md5(method + uri + md5(body))</li>
+        <li>Response = md5(A1 + nonce + A2)</li>
+    </ul>
+
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>OpenID 1.0, 1.1 + OpenID 2.0</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul class="build fade">
+        <li>OpenID is about Authentication</li>
+        <li>Defines protocol between RPs and IdPs</li>
+        <li>OpenID provides a way to prove that an End User owns an Identity URL.</li>
+        <li>No password, email address, or anything is passed around.</li>
+        <li>Completely decentralized i.e. anyone can be a Consumer or Identity Provider.</li>
+        <li>OBSOLETE!</li>
+    </ul>
+
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>OAuth</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul cclass="build fade">
+        <li>Access granting protocol</li>
+        <li>
+            Principle specs:
+            <ul>
+                <li>OAuth 2.0 Authorization Framework (RFC6749)</li>
+                <li>OAuth 2.0 Authorization Framework: Bearer Token usage (RFC6750)</li>
+            </ul>
+        </li>
+        <li>OAuth 2.0 Specification got so complicated that one of its principle authors resigned in process!</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>OpenID Connect</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul class="build fade">
+        <li>Based on OAuth2</li>
+        <li>Email is used as identifier (finally!)</li>
+        <li>Specification is 19 sections in length, we are not after simplicity here!</li>
+        <li>Has a true notion of identitIES</li>
+        <li>As of Feb 26, 2014 OpenID Connect Specification is launched!!! It is new, shiny, great! Everbody wants to use it..</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <h3>
+        People at OpenID Foundation realized that they can do absolutely nothing to educate us what is the difference
+        btw OpenID and OAuth. So, they just give us the OpenID spec which lives on top of the OAuth.
+    </h3>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Bearer Token Authentication</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>What if we are not interested in:</h3>
+    <ul cclass="build fade">
+        <li>decentralization</li>
+        <li>authenticating using 3rd party OpenID Providers</li>
+    </ul>
+    <h3>Are happy with:</h3>
+    <ul>
+        <li>plain old username/password type of authentication (at least for the first release)</li>
+    </ul>
+
+    <h3>Don't want to:</h3>
+    <ul>
+        <li>deal with the complexity associated with correct integration of OpenID Connect</li>
+        <li>to implement complex Authorization Server (granting access to resource using scopes etc), all we need is access (and user role is associated dynamically on server)</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Bearer Token Authentication</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>Objectives:</h3>
+    <ul cclass="build fade">
+        <li>The OAuth 2.0 Authorization Framework: Bearer Token Usage</li>
+        <li>HTTP 1.1 + TLS</li>
+    </ul>
+
+    <h3>OAuth Workflow:</h3>
+    <ul>
+        <li>Client asks for authorization grant from resrouse owner</li>
+        <li>Client exchanges authorization grant, for access token</li>
+        <li>Access token := scope + duration + other attribs of the grant</li>
+        <li>Access token is presented when resource is accessed</li>
+    </ul>
+
+    <h3>OAuth Alternative Workflow:</h3>
+    <ul>
+        <li>Client directly presents its credentials to authorization server</li>
+        <li>Authorization server grants access token</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <h3>Guess which one we will implement?</h3>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Bearer Token Authentication</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>Server asks for authorization:</h3>
+    <pre class="prettyprint" data-lang="">
+        HTTP/1.1 401 Unauthorized
+        WWW-Authenticate: Bearer realm="some opaque string"
+                                 scope="space delimited CaSE sensitive scope values"</pre>
+
+    <h3>If authentication failed:</h3>
+    <pre class="prettyprint" data-lang="">
+        HTTP/1.1 401 Unauthorized
+        WWW-Authenticate: Bearer realm="example",
+                          error="invalid_token",
+                          error_description="The access token expired"</pre>
+
+    <h3>Notes:</h3>
+    <ul>
+        <li>POST http://your.api.com/authentication for login</li>
+        <li>DELETE http://your.api.com/authentication for logout</li>
+    </ul>
+    <h2 style="float:right">Show some code!</h2>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+
+<!-- Section 4 -->
+<slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/dpc_favicon.ico"></aside>
+    <hgroup class="auto-fadein">
+        <h3>Part 4</h3>
+        <h2>Common Problems</h2>
+    </hgroup>
+</slide>
+        <slide>
+    <hgroup>
+        <h2>Part1</h2>
+    </hgroup>
+    <article class="biggest">
+            <ul class="build fade">
+        <li>Implementing CORS</li>
+        <li>Content Negotiation</li>
+        <li>API Versioning</li>
+        <li>Pagination</li>
+        <li>Queries</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 4: Common Problems</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Part1</h2>
+    </hgroup>
+    <article class="biggest">
+            <ul class="build fade">
+        <li>Request Limits</li>
+        <li>API Documentation</li>
+        <li>Transactions</li>
+        <li>Race Conditions</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 4: Common Problems</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+
+<slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/dpc_favicon.ico"></aside>
+    <article class="flexbox vleft auto-fadein">
+        <h2>Thank You!</h2>
+        <p>&nbsp;</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
         <!-- populated from slide_config.json -->
-        </p>
-        </slide>
+    </p>
+</slide>
 
-        <slide class="logolastslide nobackground">
-        <article class="flexbox vcenter">
+<slide class="logolastslide nobackground">
+    <article class="flexbox vcenter">
         <span><img src="images/dpc_logo_alt.png"></span>
-        </article>
-        </slide>
+    </article>
+</slide>
 
-        <slide class="backdrop"></slide>
+<slide class="backdrop"></slide>
 
-        </slides>
+</slides>
 
-        <script>
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
-            _gaq.push(['_trackPageview']);
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+    _gaq.push(['_trackPageview']);
 
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
-        <!--[if IE]>
-        <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-        <script>CFInstall.check({mode: 'overlay'});</script>
-        <![endif]-->
-    </body>
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
 </html>
+
