@@ -1,0 +1,29 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Bearer Token Authentication' %}
+{% block style 'smaller' %}
+{% block footer 'Part 3: Case in Focus' %}
+
+{% block content %}
+    <h3>Objectives:</h3>
+    <ul cclass="build fade">
+        <li>The OAuth 2.0 Authorization Framework: Bearer Token Usage</li>
+        <li>HTTP 1.1 + TLS</li>
+    </ul>
+
+    <h3>OAuth Workflow:</h3>
+    <ul>
+        <li>Client asks for authorization grant from resrouse owner</li>
+        <li>Client exchanges authorization grant, for access token</li>
+        <li>Access token := scope + duration + other attribs of the grant</li>
+        <li>Access token is presented when resource is accessed</li>
+    </ul>
+
+    <h3>OAuth Alternative Workflow:</h3>
+    <ul>
+        <li>Client directly presents its credentials to authorization server</li>
+        <li>Authorization server grants access token</li>
+    </ul>
+{% endblock %}
+{% block notes %}
+    <h3>Guess which one we will implement?</h3>
+{% endblock %}

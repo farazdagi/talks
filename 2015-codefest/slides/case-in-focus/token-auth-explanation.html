@@ -1,0 +1,34 @@
+<slide>
+    <hgroup>
+        <h2>Bearer Token Authentication</h2>
+    </hgroup>
+    <article class="smaller">
+            <h3>Objectives:</h3>
+    <ul cclass="build fade">
+        <li>The OAuth 2.0 Authorization Framework: Bearer Token Usage</li>
+        <li>HTTP 1.1 + TLS</li>
+    </ul>
+
+    <h3>OAuth Workflow:</h3>
+    <ul>
+        <li>Client asks for authorization grant from resrouse owner</li>
+        <li>Client exchanges authorization grant, for access token</li>
+        <li>Access token := scope + duration + other attribs of the grant</li>
+        <li>Access token is presented when resource is accessed</li>
+    </ul>
+
+    <h3>OAuth Alternative Workflow:</h3>
+    <ul>
+        <li>Client directly presents its credentials to authorization server</li>
+        <li>Authorization server grants access token</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Part 3: Case in Focus</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <h3>Guess which one we will implement?</h3>
+        </section>
+    </aside>
+</slide>

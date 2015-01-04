@@ -1,0 +1,25 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Digest Auth' %}
+{% block style '' %}
+{% block footer 'Part 3: Case in Focus' %}
+
+{% block content %}
+    <h3>Server wants client to authenticate itself:</h3>
+    <pre class="prettyprint" data-lang="">
+        401 Unauthorized
+        WWW-Authenticate: Digest realm="Secure Area" nonce="md5 hash" qop="auth"</pre>
+
+    <h3>Client need to respond with Authorization: containing hashed secret:</h3>
+    <pre class="prettyprint" data-lang="">
+        Authorization: Digest username="client1", realm="Secure Area",
+            nonce="server nonce", response="hashed secret will be here",
+            cnonce="client nonce", uri="/events" nc=000000001, qop="auth"</pre>
+
+    <h3>Notes:</h3>
+    <ul>
+        <li>A1 = md5(username + realm + secret)</li>
+        <li>A2 = md5(method + uri) or A2 = md5(method + uri + md5(body))</li>
+        <li>Response = md5(A1 + nonce + A2)</li>
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Data Binding' %}
+{% block style '' %}
+{% block footer 'Part 1: AngularJS Overview' %}
+
+{% block content %}
+    <h3>Setup view:</h3>
+    <pre class="prettyprint" data-lang="html">
+&lt;div class="jumbotron">
+    &lt;p ng-show="name">Hello, {% raw %}{{ name }}{% endraw %}&lt;/p>
+    &lt;input type="text" ng-model="name"/>
+&lt;/div></pre>
+
+    <h3>Setup scope:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/controllers/main.js
+angular.module('demoApp')
+  .controller('MainCtrl', function ($scope) {
+    $scope.name = 'Alex';
+  });</pre>
+{% endblock %}
+
+{% block notes %}
+    <ul>
+        <li>yo angular - will take some time to setup correctly.</li>
+    </ul>
+{% endblock %}

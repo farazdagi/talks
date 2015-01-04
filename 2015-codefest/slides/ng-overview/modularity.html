@@ -1,0 +1,32 @@
+<slide>
+    <hgroup>
+        <h2>Modularity</h2>
+    </hgroup>
+    <article class="">
+            <h3>Define your service:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/services/test.js
+angular.module('demoApp')
+  .service('Test', function Test() {
+    this.yell = function () {
+      console.log('hello!');
+    };
+  });</pre>
+
+    <h3>Use the service:</h3>
+    <pre class="prettyprint" data-lang="javascript">
+// app/scripts/controllers/main.js
+angular.module('demoApp')
+  .controller('MainCtrl', function ($scope, Test) {
+    Test.yell();
+  });</pre>
+
+    </article>
+    <fgroup>
+        <h3>Part 1: AngularJS Overview</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
