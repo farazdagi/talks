@@ -31,68 +31,45 @@ URL: https://code.google.com/p/io-2012-slides
 {% include 'slides/misc/title.twig' %}
 {% include 'slides/misc/about-me.twig' %}
 {% include 'slides/misc/talk-outline.twig' %}
-{% include 'slides/misc/setup-rest-tickets.twig' %}
+{% include 'slides/misc/sample-application-setup.twig' %}
 
 <!-- Section 1 -->
-{% include 'slides/ng-overview/segue.twig' %}
+{% include 'slides/coreos-overview/segue.twig' %}
     {% set slides = [
         'stop-charging-buffalo',
-        'top-5-ng-features',
-        'modularity',
-        'data-binding',
-        'rest-support-http',
-        'rest-support-request',
-        'promises-1',
-        'promises-2',
-        'promises-3',
-        'available-tooling',
+        'top-features',
     ] %}
-    {% for slide in slides %}{% include 'slides/ng-overview/' ~ slide ~ '.twig' %}{% endfor  %}
-
-
+    {% for slide in slides %}{% include 'slides/coreos-overview/' ~ slide ~ '.twig' %}{% endfor  %}
 
 <!-- Section 2 -->
-{% include 'slides/rest-refresher/segue.twig' %}
+{% include 'slides/paradigm-shift/segue.twig' %}
     {% set slides = [
-        'history-of-rest',
-        'thinking-in-resources',
-        'hateoas',
-        'architectural-constraints',
-        'methods',
-        'status-codes',
+        'architecture',
     ] %}
-    {% for slide in slides %}{% include 'slides/rest-refresher/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/paradigm-shift/' ~ slide ~ '.twig' %}{% endfor  %}
 
 <!-- Section 3 -->
-{% include 'slides/case-in-focus/segue.twig' %}
+{% include 'slides/manage-apps/segue.twig' %}
     {% set slides = [
-        'auth-challenges',
-        'same-origin',
-        'transfer-secret',
-        'basic-auth',
-        'digest-auth',
-        'openid-obsolete',
-        'oauth',
-        'openid-connect',
-        'token-auth-intro',
-        'token-auth-explanation',
-        'token-auth-notes',
     ] %}
-    {% for slide in slides %}{% include 'slides/case-in-focus/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/manage-apps/' ~ slide ~ '.twig' %}{% endfor  %}
 
-<!-- Section 4 -->
-{% include 'slides/common-problems/segue.twig' %}
+<!-- Section 2 -->
+{% include 'slides/manage-cluster/segue.twig' %}
     {% set slides = [
-        'part1',
-        'part2'
     ] %}
-    {% for slide in slides %}{% include 'slides/common-problems/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/manage-cluster/' ~ slide ~ '.twig' %}{% endfor  %}
 
+<!-- Section 2 -->
+{% include 'slides/conclusion/segue.twig' %}
+    {% set slides = [
+    ] %}
+    {% for slide in slides %}{% include 'slides/conclusion/' ~ slide ~ '.twig' %}{% endfor  %}
 {% include 'slides/misc/thank-you.twig' %}
 
 <slide class="logolastslide nobackground">
     <article class="flexbox vcenter">
-        <span><img src="images/dpc_logo_alt.png"></span>
+        <span><img src="images/logo.png"></span>
     </article>
 </slide>
 

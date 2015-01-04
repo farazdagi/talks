@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'The ideal REST API for<br>the AngularJS applications',
-    subtitle: 'Dutch PHP Conference, June\'14',
+      title: 'CoreOS Intro',
+    subtitle: 'CodeFest March\'15',
     //eventInfo: {
     //  title: 'Google I/O',
     //  date: '6/x/2013'
