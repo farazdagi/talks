@@ -1,0 +1,19 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Why containers' %}
+{% block style 'bigger' %}
+{% block footer 'Часть 1: Обзор CoreOS' %}
+
+{% block content %}
+    <ul>
+        <li>Containers imply distributed architecture</li>
+        <li>Containers vs VMs (wrong dichotomy)</li>
+    </ul>
+    <img style="position: absolute; top: 270px; left: 250px; width: 500px;" src="images/containers-vs-vms.png" />
+{% endblock %}
+
+{% block notes %}
+<ul>
+    <li>VMs and Containers can be used together</li>
+    <li>Containers should run on bare metal for the best performance though</li>
+</ul>
+{% endblock %}

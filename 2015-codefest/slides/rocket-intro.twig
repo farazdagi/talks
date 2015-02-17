@@ -1,0 +1,25 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Rocket Runtime' %}
+{% block style 'bigger' %}
+{% block footer 'Часть 1: Обзор CoreOS' %}
+
+{% block content %}
+    <ul>
+        <li>Docker quickly becoming a platform not just Container Runtime</li>
+        <li>App Container is a specification of an image format, runtime, and discovery protocol for running a
+            container.</li>
+        <li>Rocket is in early stages, Docker will be supported (or so they say)</li>
+    </ul>
+{% endblock %}
+
+{% block notes %}
+<P>
+Unfortunately, a simple re-usable component is not how things are playing out. Docker now is building tools for
+launching cloud servers, systems for clustering, and a wide range of functions: building images, running images,
+uploading, downloading, and eventually even overlay networking, all compiled into one monolithic binary running
+primarily as root on your server. The standard container manifesto was removed. We should stop talking about Docker
+containers, and start talking about the Docker Platform. It is not becoming the simple composable building block we had
+envisioned.
+</P>
+{% endblock %}
+

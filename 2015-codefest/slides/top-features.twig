@@ -1,0 +1,18 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Top Features' %}
+{% block style 'bigger' %}
+{% block footer 'Часть 1: Цели и Задачи CoreOS' %}
+
+{% block content %}
+    <ul>
+        <li>Minimal (based on Gentoo)</li>
+        <li>Secure (Automatic Updates)</li>
+        <li>Designed for HA clusters</li>
+    </ul>
+
+    <p style="font-size: 0.8em; text-align: center; padding: 30px 50px;position: relative;">
+    CoreOS is a new Linux distribution that has been rearchitected to provide features needed to run modern
+    infrastructure stacks.
+    <small style="position: absolute; bottom: 0; right: 90px; font-size: 0.6em;">from https://coreos.com</small>
+    </p>
+{% endblock %}

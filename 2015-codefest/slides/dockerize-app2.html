@@ -1,0 +1,29 @@
+<slide>
+    <hgroup>
+        <h2>Dockerizing Apps: Dockerfile</h2>
+    </hgroup>
+    <article class="bigger">
+            <pre class="prettyprint" data-lang="dockerfile">
+FROM golang:1.4
+
+# Bundle app source
+COPY . /go/src/github.com/farazdagi/dumbserver
+
+# Install app
+RUN cd /go/src/github.com/farazdagi/dumbserver; go install
+
+EXPOSE  80
+CMD ["dumbserver"]
+    </pre>
+    <ul>
+        <li>Great example of gradual specialization of the image</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>

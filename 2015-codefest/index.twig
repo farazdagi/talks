@@ -26,45 +26,72 @@ URL: https://code.google.com/p/io-2012-slides
 <body style="opacity: 0">
 
 <slides class="layout-widescreen">
-
 {% include 'slides/misc/logo.twig' %}
 {% include 'slides/misc/title.twig' %}
-{% include 'slides/misc/about-me.twig' %}
-{% include 'slides/misc/talk-outline.twig' %}
-{% include 'slides/misc/sample-application-setup.twig' %}
+{% include 'slides/about-me.twig' %}
 
 <!-- Section 1 -->
-{% include 'slides/coreos-overview/segue.twig' %}
+{% include 'slides/segue-coreos-intro.twig' %}
     {% set slides = [
-        'stop-charging-buffalo',
+        'paradigm-shift',
+        'warehouse-scale-machine',
         'top-features',
+        'architecture',
+        'coreos-is',
     ] %}
-    {% for slide in slides %}{% include 'slides/coreos-overview/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
 <!-- Section 2 -->
-{% include 'slides/paradigm-shift/segue.twig' %}
+{% include 'slides/segue-use-cluster.twig' %}
     {% set slides = [
-        'architecture',
+        'distributed-systems-are-hard',
+        'why-containers',
+        'docker-intro',
+        'dockerize-app1',
+        'dockerize-app2',
+        'dockerize-app3',
+        'rocket-intro',
+        'why-containers-again'
     ] %}
-    {% for slide in slides %}{% include 'slides/paradigm-shift/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
 <!-- Section 3 -->
-{% include 'slides/manage-apps/segue.twig' %}
+{% include 'slides/segue-setup-cluster.twig' %}
     {% set slides = [
+        'cloud-config',
+        'cloud-config-example',
+        'start-do-cluster',
+        'check-do-cluster',
+        'etcd-intro',
+        'etcd-discovery-api',
     ] %}
-    {% for slide in slides %}{% include 'slides/manage-apps/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
-<!-- Section 2 -->
-{% include 'slides/manage-cluster/segue.twig' %}
+<!-- Section 4 -->
+{% include 'slides/segue-manage-cluster.twig' %}
     {% set slides = [
+        'systemd-intro',
+        'systemd-example',
+        'fleet-intro',
+        'fleet-example',
+        'journal-logs'
     ] %}
-    {% for slide in slides %}{% include 'slides/manage-cluster/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
-<!-- Section 2 -->
-{% include 'slides/conclusion/segue.twig' %}
+<!-- Section 5 -->
+{% include 'slides/segue-update-cluster.twig' %}
     {% set slides = [
+        'auto-updates',
     ] %}
-    {% for slide in slides %}{% include 'slides/conclusion/' ~ slide ~ '.twig' %}{% endfor  %}
+    {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
+
+
+<!-- Section 6 -->
+{% include 'slides/segue-conclusion.twig' %}
+    {% set slides = [
+        'sample-application-setup',
+    ] %}
+    {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 {% include 'slides/misc/thank-you.twig' %}
 
 <slide class="logolastslide nobackground">

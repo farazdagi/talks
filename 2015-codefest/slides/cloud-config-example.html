@@ -1,0 +1,51 @@
+<slide>
+    <hgroup>
+        <h2>cloud-config: minimal example</h2>
+    </hgroup>
+    <article class="bigger">
+        <pre class="prettyprint" data-lang="cloud-config">
+#cloud-config
+
+coreos:
+  etcd:
+    discovery: https://discovery.etcd.io/47f61dc8b1c4bcb4d9be296099fa57da
+    addr: $private_ipv4:4001 # for multi-region and multi-cloud use $public_ipv4
+    peer-addr: $private_ipv4:7001
+  fleet:
+    public-ip: $private_ipv4   # used by fleetctl client
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+</pre>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            <ul>
+    <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean">Setting up CoreOS cluster on DO</a></li>
+</ul>
+<pre class="prettyprint" data-lang="cloud-config">
+#cloud-config
+
+coreos:
+  etcd:
+    # generate a new token for each unique cluster from https://discovery.etcd.io/new
+    discovery: https://discovery.etcd.io/<token>
+    # use $public_ipv4 if your datacenter of choice does not support private networking
+    addr: $private_ipv4:4001
+    peer-addr: $private_ipv4:7001
+  fleet:
+    public-ip: $private_ipv4   # used for fleetctl ssh command
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+</pre>
+        </section>
+    </aside>
+</slide>

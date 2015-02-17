@@ -1,0 +1,36 @@
+<slide>
+    <hgroup>
+        <h2>Dockerizing Apps: Results</h2>
+    </hgroup>
+    <article class="bigger">
+            <pre class="prettyprint" data-lang="zsh">
+$ sudo docker build -t farazdagi/dumbserver
+$ sudo docker run -d -p 5577:80 farazdagi/dumbserver</pre>
+
+    <h3>Now we can query our dumb server:</h3>
+    <pre class="prettyprint" data-lang="zsh" style="font-size: 18px; line-height: 22px;">
+$ http GET localhost:5577
+HTTP/1.1 200 OK
+Content-Length: 7
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 12 Feb 2015 21:32:23 GMT
+
+Hello /
+
+$ http GET localhost:5577/foo/bar
+HTTP/1.1 200 OK
+Content-Length: 14
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 12 Feb 2015 21:32:28 GMT
+
+Hello /foo/bar</pre>
+
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>

@@ -26,7 +26,6 @@ URL: https://code.google.com/p/io-2012-slides
 <body style="opacity: 0">
 
 <slides class="layout-widescreen">
-
 <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
         <span><img src="images/logo.png" style="width: 97px; height: 125px;"/></span>
@@ -46,7 +45,23 @@ URL: https://code.google.com/p/io-2012-slides
         <h2>About Me</h2>
     </hgroup>
     <article class="">
-            <p>
+            <p style="font-size: 1.4em;padding-top: 80px;">
+    Victor Farazdagi (<a href="https://twitter.com/farazdagi">@farazdagi</a>):<br />
+    <ul style="font-size: 1.2em;line-height: 1.4em;">
+        <li>MSCS Student @ Georgia Tech. (Specialization: Systems)</li>
+        <li>Chef Engineer @ Square Labs</li>
+    </ul>
+    </p>
+
+    <img style="position: absolute; bottom: 90px; right: 200px; width: 160px;" src="images/square-labs-logo.png" />
+    <img style="position: absolute; bottom: 90px; left: 200px; width: 160px;" src="images/gatech.gif" />
+    </article>
+    <fgroup>
+        <h3></h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <p>
         Academic:<br />
     <ul>
         <li>BA in Political Sci. &amp; Int. Relations from Bosphorus Univ.</li>
@@ -66,61 +81,11 @@ URL: https://code.google.com/p/io-2012-slides
     <p>
         Social Media:<br />
     <ul>
-        <li>@farazdagi<strong style="float: right;">(буду рад ответить на все вопросы по презентации)</strong></li>
+        <li><a href="https://twitter.com/farazdagi">@farazdagi</a></li>
         <li>github.com/farazdagi</li>
     </ul>
     </p>
-    </article>
-    <fgroup>
-        <h3>Introduction</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                <p style="text-align: center; font-size: 1.3em;">
-        @farazdagi
-    </p>
         </section>
-    </aside>
-</slide>
-<slide>
-    <hgroup>
-        <h2>План доклада</h2>
-    </hgroup>
-    <article class="biggest">
-            <ul>
-        <li>Обзор CoreOS</li>
-        <li>Paradigm Shift (micro-kernel)</li>
-        <li>Managing Applications (docker)</li>
-        <li>Managing Clusters (etcd, systemd, fleet)</li>
-        <li>Concluding Remarks</li>
-    </ul>
-    </article>
-    <fgroup>
-        <h3>Introduction</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                    </section>
-    </aside>
-</slide>
-<slide>
-    <hgroup>
-        <h2>Sample Application Setup</h2>
-    </hgroup>
-    <article class="biggest">
-            <ul>
-        <li>Setup is done using Vagrant + Ansible</li>
-        <li>
-            3 nodes, 3 separate protection domains
-        </li>
-    </ul>
-    </article>
-    <fgroup>
-        <h3>Introduction</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                    </section>
     </aside>
 </slide>
 
@@ -129,35 +94,105 @@ URL: https://code.google.com/p/io-2012-slides
     <aside class="gdbar"><img src="images/logo.png"></aside>
     <hgroup class="auto-fadein">
         <h3>Часть 1</h3>
-        <h2>Обзор CoreOS</h2>
+        <h2>Цели и задачи</h2>
     </hgroup>
 </slide>
-        <slide class="fill nobackground" style="background-image: url(images/cape-buffalo.jpg)">
+        <slide>
     <hgroup>
-        <h2 class="white"></h2>
+        <h2>Смена парадигмы</h2>
     </hgroup>
-    <footer class="source white">http://thatguywiththeglasses.com/blogs/latest/entry/dangerous-creatures-cape-buffalo</footer>
+    <article class="biggest">
+            <p style="padding-top:150px;font-size:1.2em;line-height:1.2em;text-align:center;">
+        What can we do to improve the security of the Internet?
+    </p>
+    <img style="position: absolute; top: 80px; right: 50px; width: 300px;" src="images/use-browser-experience.png" />
+    </article>
+    <fgroup>
+        <h3>Часть 1: Цели и Задачи CoreOS</h3>
+    </fgroup>
     <aside class="note">
         <section>
-                <h2>How to stop a charging buffalo?</h2>
-
+                <ul>
+        <li>CoreOS Mission: Secure the internet</li>
+        <li>Let's use browsers' experience (automatic updates)</li>
+        <li>Alex Polvi: Ethos of CoreOS</li>
+    </ul>
+    <!--<img style="position: absolute; top: 80px; right: 50px; width: 200px;" src="images/small-cluster.png" />-->
         </section>
     </aside>
 </slide>
 <slide>
     <hgroup>
-        <h2>Killer Features</h2>
+        <h2>Warehouse-scale Machine</h2>
     </hgroup>
     <article class="bigger">
             <ul>
-        <li>Security</li>
-        <li>Scalability</li>
-        <li>Extensibility</li>
+        <li>Clusters</li>
+        <li>Redundancy and HA</li>
     </ul>
-    <img style="position: absolute; top: 60px; right: 0px;" src="images/coreos-features.png" />
+    <img style="position: absolute; top: 250px; left: 50px; width: 400px;" src="images/warehouse-scale-machine.png" />
+    <img style="position: absolute; top: 120px; right: 50px; width: 400px;" src="images/cpu-evolution.png" />
     </article>
     <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
+        <h3>Часть 1: Цели и Задачи CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Top Features</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+        <li>Minimal (based on Gentoo)</li>
+        <li>Secure (Automatic Updates)</li>
+        <li>Designed for HA clusters</li>
+    </ul>
+
+    <p style="font-size: 0.8em; text-align: center; padding: 30px 50px;position: relative;">
+    CoreOS is a new Linux distribution that has been rearchitected to provide features needed to run modern
+    infrastructure stacks.
+    <small style="position: absolute; bottom: 0; right: 90px; font-size: 0.6em;">from https://coreos.com</small>
+    </p>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Цели и Задачи CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Архитектура</h2>
+    </hgroup>
+    <article class="bigger">
+            <img style="position: absolute; top: 160px; left: 50px; width:450px;" src="images/coreos-arch.png" />
+    <div class="build">
+    <img style="position: absolute; top: 160px; right: 50px;" src="images/redesigned-split.png" />
+    </div>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Цели и Задачи CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>CoreOS is..</h2>
+    </hgroup>
+    <article class="bigger">
+            <img style="position: absolute; top: 150px; left: 200px; width: 550px;" src="images/coreos-is.png" />
+    </article>
+    <fgroup>
+        <h3>Часть 1: Цели и Задачи CoreOS</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -170,22 +205,224 @@ URL: https://code.google.com/p/io-2012-slides
     <aside class="gdbar"><img src="images/logo.png"></aside>
     <hgroup class="auto-fadein">
         <h3>Часть 2</h3>
-        <h2>Разрыв Шаблона</h2>
+        <h2>Using Clusters</h2>
     </hgroup>
 </slide>
         <slide>
     <hgroup>
-        <h2>Архитектура</h2>
+        <h2>Distributed Systems are HARD</h2>
     </hgroup>
     <article class="bigger">
-            <img style="position: absolute; top: 60px; left: 50px;" src="images/coreos-arch.png" />
+            <ul>
+        <li>Node failures are *inevitable*. Not if it fails, but what to do when it does so (Fault Tolerance).</li>
+        <li>More expensive: to write software and to maintain infrastructure</li>
+        <li>Node coordiantion is not trivial (it is HARD)</li>
+        <li>To build HA system, you have to design your apps appropriately</li>
+    </ul>
     </article>
     <fgroup>
-        <h3>Часть 2: Разрыв Шаблона</h3>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            <ul>
+    <li>More info: <a href="http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/">Notes on DS for young bloods</a></li>
+</ul>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Why containers</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+        <li>Containers imply distributed architecture</li>
+        <li>Containers vs VMs (wrong dichotomy)</li>
+    </ul>
+    <img style="position: absolute; top: 270px; left: 250px; width: 500px;" src="images/containers-vs-vms.png" />
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            <ul>
+    <li>VMs and Containers can be used together</li>
+    <li>Containers should run on bare metal for the best performance though</li>
+</ul>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Docker</h2>
+    </hgroup>
+    <article class="bigger">
+            <pre class="prettyprint" data-lang="zsh">
+$ sudo docker run ubuntu /bin/echo 'hello world'
+$ sudo docker run -i -t ubuntu /bin/bash
+    </pre>
+    <h3>It is trivial:</h3>
+    <ul style="font-size: 26px;line-height: 28px;">
+        <li>Create Images i.e. Dockerizing Apps</li>
+        <li>Distributing images and running containers</li>
+        <li>Linking containers together</li>
+        <li>Managing data using volumes<br />and volume containers</li>
+    </ul>
+
+    <img style="position: absolute; bottom: 80px; right: 50px; width: 500px;" src="images/docker-architecture.png" />
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
     </fgroup>
     <aside class="note">
         <section>
                     </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Dockerizing Apps: App Source Code</h2>
+    </hgroup>
+    <article class="bigger">
+            <pre class="prettyprint" data-lang="go">
+package main
+
+import (
+        "fmt"
+        "html"
+        "log"
+        "net/http"
+)
+
+func main() {
+        http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+                fmt.Fprintf(w, "Hello %s", html.EscapeString(r.URL.Path))
+                log.Println("GET", html.EscapeString(r.URL.Path))
+        })
+
+        log.Fatal(http.ListenAndServe(":8080", nil))
+}</pre>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Dockerizing Apps: Dockerfile</h2>
+    </hgroup>
+    <article class="bigger">
+            <pre class="prettyprint" data-lang="dockerfile">
+FROM golang:1.4
+
+# Bundle app source
+COPY . /go/src/github.com/farazdagi/dumbserver
+
+# Install app
+RUN cd /go/src/github.com/farazdagi/dumbserver; go install
+
+EXPOSE  80
+CMD ["dumbserver"]
+    </pre>
+    <ul>
+        <li>Great example of gradual specialization of the image</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Dockerizing Apps: Results</h2>
+    </hgroup>
+    <article class="bigger">
+            <pre class="prettyprint" data-lang="zsh">
+$ sudo docker build -t farazdagi/dumbserver
+$ sudo docker run -d -p 5577:80 farazdagi/dumbserver</pre>
+
+    <h3>Now we can query our dumb server:</h3>
+    <pre class="prettyprint" data-lang="zsh" style="font-size: 18px; line-height: 22px;">
+$ http GET localhost:5577
+HTTP/1.1 200 OK
+Content-Length: 7
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 12 Feb 2015 21:32:23 GMT
+
+Hello /
+
+$ http GET localhost:5577/foo/bar
+HTTP/1.1 200 OK
+Content-Length: 14
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 12 Feb 2015 21:32:28 GMT
+
+Hello /foo/bar</pre>
+
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Rocket Runtime</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+        <li>Docker quickly becoming a platform not just Container Runtime</li>
+        <li>App Container is a specification of an image format, runtime, and discovery protocol for running a
+            container.</li>
+        <li>Rocket is in early stages, Docker will be supported (or so they say)</li>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            <P>
+Unfortunately, a simple re-usable component is not how things are playing out. Docker now is building tools for
+launching cloud servers, systems for clustering, and a wide range of functions: building images, running images,
+uploading, downloading, and eventually even overlay networking, all compiled into one monolithic binary running
+primarily as root on your server. The standard container manifesto was removed. We should stop talking about Docker
+containers, and start talking about the Docker Platform. It is not becoming the simple composable building block we had
+envisioned.
+</P>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>So why containers?</h2>
+    </hgroup>
+    <article class="bigger">
+            <div class="build">
+        <h1 style="margin-top: 200px;text-align: center;" class="build">Because they are fast, portable and lightweight.</h1>
+        <img style="position: absolute; bottom: 60px; right: 50px; width: 350px;" src="images/what-about-security.png" />
+    </div>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            Granted we have problems, like security, but those problems are solvable.
+        </section>
     </aside>
 </slide>
 
@@ -193,29 +430,334 @@ URL: https://code.google.com/p/io-2012-slides
 <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/logo.png"></aside>
     <hgroup class="auto-fadein">
-        <h3>Часть 3</h3>
-        <h2>Managing Applications</h2>
+        <h3>Часть 2</h3>
+        <h2>Cluster Setup and Configuration</h2>
     </hgroup>
 </slide>
-        
-<!-- Section 2 -->
+        <slide>
+    <hgroup>
+        <h2>cloud-config</h2>
+    </hgroup>
+    <article class="bigger">
+        <p class="smallest">
+Cloud-config is intended to bring up a cluster of machines into a minimal useful state and ideally shouldn't be used
+to configure anything that isn't standard across many hosts.
+</p>
+    <ul class="smaller">
+        <li>Configuration in YAML</li>
+        <li>Configuration is parsed and corresponsing systemd unit files are generated.</li>
+        <li>Allows you to setup:
+            <ul>
+                <li>Discovery parameters</li>
+                <li>Configure systemd units</li>
+                <li>Network</li>
+                <li>SSH keys and Users</li>
+            </ul>
+        </li>
+    </ul>
+    <img style="position: absolute; bottom: 60px; right: 50px; width: 350px;" src="images/cloud-config-function.png" />
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            <ul>
+    <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean">Setting up CoreOS cluster on DO</a></li>
+</ul>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>cloud-config: minimal example</h2>
+    </hgroup>
+    <article class="bigger">
+        <pre class="prettyprint" data-lang="cloud-config">
+#cloud-config
+
+coreos:
+  etcd:
+    discovery: https://discovery.etcd.io/47f61dc8b1c4bcb4d9be296099fa57da
+    addr: $private_ipv4:4001 # for multi-region and multi-cloud use $public_ipv4
+    peer-addr: $private_ipv4:7001
+  fleet:
+    public-ip: $private_ipv4   # used by fleetctl client
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+</pre>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+            <ul>
+    <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean">Setting up CoreOS cluster on DO</a></li>
+</ul>
+<pre class="prettyprint" data-lang="cloud-config">
+#cloud-config
+
+coreos:
+  etcd:
+    # generate a new token for each unique cluster from https://discovery.etcd.io/new
+    discovery: https://discovery.etcd.io/<token>
+    # use $public_ipv4 if your datacenter of choice does not support private networking
+    addr: $private_ipv4:4001
+    peer-addr: $private_ipv4:7001
+  fleet:
+    public-ip: $private_ipv4   # used for fleetctl ssh command
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+</pre>
+        </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>start DO cluster</h2>
+    </hgroup>
+    <article class="bigger">
+            <img style="position: absolute; top: 120px; left: 150px; width: 600px;" src="images/start-do-droplet.png" />
+<pre style="font-size: 16px; line-height: 18px;margin-top:160px;" class="prettyprint" data-lang="zsh">
+read TOKEN
+# provide token
+read SSH_KEY_ID
+# provide SSH key id
+
+curl -X POST https://api.digitalocean.com/v2/droplets \
+    -H 'Content-Type: application/json' \
+    -H "Authorization: Bearer $TOKEN" \
+    -d '
+{
+    "name":"core-1",
+    "region":"ams3",
+    "size":"512mb",
+    "image":"coreos-stable",
+    "ssh_keys":['$SSH_KEY_ID'],
+    "backups":false,
+    "private_networking":true,
+    "user_data": "'"$(cat config/cloud-config.yaml | sed 's/"/\\"/g')"'"
+}'</pre>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Check DO cluster</h2>
+    </hgroup>
+    <article class="bigger">
+        <pre style="" class="prettyprint" data-lang="zsh">
+# ssh into any of core-* boxes and see if cluster discovery actually worked:
+core@core-1 ~ $ fleetctl list-machines
+MACHINE         IP              METADATA
+0bb7e700...     10.133.194.91   -
+330a6b08...     10.133.194.90   -
+eecedbb6...     10.133.194.85   -
+</pre>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Service Discovery (etcd)</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Discovery API</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+
+<!-- Section 4 -->
 <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/logo.png"></aside>
     <hgroup class="auto-fadein">
-        <h3>Часть 4</h3>
+        <h3>Часть 3</h3>
         <h2>Managing Cluster</h2>
     </hgroup>
 </slide>
-        
-<!-- Section 2 -->
+        <slide>
+    <hgroup>
+        <h2>systemd overview</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 3: Cluster Management</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>systemd example</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 3: Cluster Management</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>fleet overview</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 3: Cluster Management</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>fleet example</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 3: Cluster Management</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>journal logs</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 3: Cluster Management</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+
+<!-- Section 5 -->
 <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/logo.png"></aside>
     <hgroup class="auto-fadein">
         <h3>Часть 5</h3>
+        <h2>Updating Cluster</h2>
+    </hgroup>
+</slide>
+        <slide>
+    <hgroup>
+        <h2>Reboot Manager (locksmith)</h2>
+    </hgroup>
+    <article class="bigger">
+            <ul>
+    </ul>
+    </article>
+    <fgroup>
+        <h3>Часть 1: Обзор CoreOS</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+
+
+<!-- Section 6 -->
+<slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo.png"></aside>
+    <hgroup class="auto-fadein">
+        <h3>Часть 6</h3>
         <h2>Conclusion and Take-Aways</h2>
     </hgroup>
 </slide>
-        <slide class="thank-you-slide segue nobackground">
+        <slide>
+    <hgroup>
+        <h2>Sample Application Setup</h2>
+    </hgroup>
+    <article class="biggest">
+            <ul>
+        <li>Small Cluster (3-9 nodes)</li>
+        <li>Round-robin load balancer</li>
+        <li>
+            Apps redundantly distributed for HA
+        </li>
+    </ul>
+    <img style="position: absolute; top: 80px; right: 50px; width: 200px;" src="images/small-cluster.png" />
+    </article>
+    <fgroup>
+        <h3>Introduction</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <ul>
+        <li>Step-by-step instruction on how to TRY various CoreOS components</li>
+    </ul>
+        </section>
+    </aside>
+</slide>
+<slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/logo.png"></aside>
     <article class="flexbox vleft auto-fadein">
         <h2>Thank You!</h2>

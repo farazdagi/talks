@@ -1,0 +1,22 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'Dockerizing Apps: Dockerfile' %}
+{% block style 'bigger' %}
+{% block footer 'Часть 1: Обзор CoreOS' %}
+
+{% block content %}
+    <pre class="prettyprint" data-lang="dockerfile">
+FROM golang:1.4
+
+# Bundle app source
+COPY . /go/src/github.com/farazdagi/dumbserver
+
+# Install app
+RUN cd /go/src/github.com/farazdagi/dumbserver; go install
+
+EXPOSE  80
+CMD ["dumbserver"]
+    </pre>
+    <ul>
+        <li>Great example of gradual specialization of the image</li>
+    </ul>
+{% endblock %}

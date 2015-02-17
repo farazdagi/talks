@@ -1,25 +1,22 @@
-<slide>
-    <hgroup>
-        <h2>About Me</h2>
-    </hgroup>
-    <article class="">
-            <p style="font-size: 1.4em;padding-top: 80px;">
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'About Me' %}
+{% block footer '' %}
+
+{% block content %}
+    <p style="font-size: 1.4em;padding-top: 80px;">
     Victor Farazdagi (<a href="https://twitter.com/farazdagi">@farazdagi</a>):<br />
     <ul style="font-size: 1.2em;line-height: 1.4em;">
         <li>MSCS Student @ Georgia Tech. (Specialization: Systems)</li>
-        <li>Software Engineer @ Square Labs</li>
+        <li>Chef Engineer @ Square Labs</li>
     </ul>
     </p>
 
     <img style="position: absolute; bottom: 90px; right: 200px; width: 160px;" src="images/square-labs-logo.png" />
     <img style="position: absolute; bottom: 90px; left: 200px; width: 160px;" src="images/gatech.gif" />
-    </article>
-    <fgroup>
-        <h3></h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                <p>
+{% endblock %}
+
+{% block notes %}
+    <p>
         Academic:<br />
     <ul>
         <li>BA in Political Sci. &amp; Int. Relations from Bosphorus Univ.</li>
@@ -43,6 +40,4 @@
         <li>github.com/farazdagi</li>
     </ul>
     </p>
-        </section>
-    </aside>
-</slide>
+{% endblock %}
