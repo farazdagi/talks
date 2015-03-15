@@ -1,14 +1,14 @@
 {% extends 'slides/layout/normal-slide.twig' %}
 {% block title 'Distributed Systems are HARD' %}
 {% block style 'bigger' %}
-{% block footer 'Часть 1: Обзор CoreOS' %}
+{% block footer 'Using Clusters' %}
 
 {% block content %}
-    <ul>
-        <li>Node failures are *inevitable*. Not if it fails, but what to do when it does so (Fault Tolerance).</li>
+    <ul style="">
+        <li>Node failures are <strong>*inevitable*</strong> (Fault Tolerance).</li>
         <li>More expensive: to write software and to maintain infrastructure</li>
         <li>Node coordiantion is not trivial (it is HARD)</li>
-        <li>To build HA system, you have to design your apps appropriately</li>
+        <li>To build HA system, you have to design your apps appropriately.</li>
     </ul>
 {% endblock %}
 

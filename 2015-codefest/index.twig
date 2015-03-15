@@ -27,11 +27,11 @@ URL: https://code.google.com/p/io-2012-slides
 
 <slides class="layout-widescreen">
 {% include 'slides/misc/logo.twig' %}
-{% include 'slides/misc/title.twig' %}
 {% include 'slides/about-me.twig' %}
+{% include 'slides/misc/title.twig' %}
 
 <!-- Section 1 -->
-{% include 'slides/segue-coreos-intro.twig' %}
+<!--{% include 'slides/segue-coreos-intro.twig' %}-->
     {% set slides = [
         'paradigm-shift',
         'warehouse-scale-machine',
@@ -42,7 +42,7 @@ URL: https://code.google.com/p/io-2012-slides
     {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
 <!-- Section 2 -->
-{% include 'slides/segue-use-cluster.twig' %}
+<!--{% include 'slides/segue-use-cluster.twig' %}-->
     {% set slides = [
         'distributed-systems-are-hard',
         'why-containers',
@@ -56,7 +56,7 @@ URL: https://code.google.com/p/io-2012-slides
     {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
 <!-- Section 3 -->
-{% include 'slides/segue-setup-cluster.twig' %}
+<!--{% include 'slides/segue-setup-cluster.twig' %}-->
     {% set slides = [
         'cloud-config',
         'cloud-config-example',

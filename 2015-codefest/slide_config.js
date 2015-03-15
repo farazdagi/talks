@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-      title: 'CoreOS Intro',
+      title: 'CoreOS: <br/>Запланированная революция',
     subtitle: 'CodeFest March\'15',
     //eventInfo: {
     //  title: 'Google I/O',
@@ -24,7 +24,7 @@ var SLIDE_CONFIG = {
   // Author information
   presenters: [{
     name: 'Victor Farazdagi',
-    company: 'Software Engineer<br>Square Labs',
+    company: 'Software Engineer<br>Square Labs, Nürnberg',
 //    gplus: 'https://www.google.com/+VictorFarazdagi',
     twitter: '@farazdagi',
     www: 'farazdagi.com',

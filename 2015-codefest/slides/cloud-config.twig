@@ -1,13 +1,9 @@
 {% extends 'slides/layout/normal-slide.twig' %}
 {% block title 'cloud-config' %}
 {% block style 'bigger' %}
-{% block footer 'Часть 1: Обзор CoreOS' %}
+{% block footer 'Cluster Setup &amp; Configuration' %}
 
 {% block content %}
-<p class="smallest">
-Cloud-config is intended to bring up a cluster of machines into a minimal useful state and ideally shouldn't be used
-to configure anything that isn't standard across many hosts.
-</p>
     <ul class="smaller">
         <li>Configuration in YAML</li>
         <li>Configuration is parsed and corresponsing systemd unit files are generated.</li>
