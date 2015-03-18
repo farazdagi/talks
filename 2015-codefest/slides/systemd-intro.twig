@@ -1,9 +1,13 @@
 {% extends 'slides/layout/normal-slide.twig' %}
 {% block title 'systemd overview' %}
 {% block style 'bigger' %}
-{% block footer 'Часть 3: Cluster Management' %}
+{% block footer 'Running Services in CoreOS Clusters' %}
 
 {% block content %}
+    <p>systemd:</p>
     <ul>
+        <li>init system: allows to start/stop/manage processes</li>
+        <li>you manage Docker containers via systemd unit files</li>
+        <li>built to replace Linux init system, and was successful in that regard</li>
     </ul>
 {% endblock %}

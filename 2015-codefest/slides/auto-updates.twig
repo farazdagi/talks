@@ -1,9 +1,23 @@
 {% extends 'slides/layout/normal-slide.twig' %}
-{% block title 'Reboot Manager (locksmith)' %}
+{% block title 'Updating CoreOS' %}
 {% block style 'bigger' %}
-{% block footer 'Часть 1: Обзор CoreOS' %}
+{% block footer 'Updating Cluster' %}
 
 {% block content %}
     <ul>
+        <li>Omaha Protocol</li>
+        <li>Pull based model</li>
+        <li>Dual-partion scheme</li>
+        <li>Reboot manager (locksmith)<br />
+            <div class="smaller" style="margin-left: 50px;">
+            Restart strategies:
+            <ul>
+                <li>wait for etcd lock</li>
+                <li>best effort (default)</li>
+                <li>immediate restart</li>
+            </ul>
+            </div>
+        </li>
     </ul>
+    <img style="position: absolute; bottom: 280px; right: 100px; width: 250px;" src="images/updating-coreos.png" />
 {% endblock %}

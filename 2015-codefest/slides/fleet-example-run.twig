@@ -1,0 +1,32 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'fleet: running the example' %}
+{% block style 'bigger' %}
+{% block footer 'Running Services in CoreOS Clusters' %}
+
+{% block content %}
+<strong style="font-size: 22px;">Enable service:</strong>
+<pre class="prettyprint" style="margin-bottom: 0;font-size: 18px; line-height: 22px;" data-lang="zsh">
+$ fleetctl submit dumbserver\@.service
+$ fleetctl list-unit-files
+UNIT                    HASH    DSTATE          STATE           TARGET
+dumbserver@.service     063a727 inactive        inactive
+</pre>
+
+<strong style="font-size: 22px;">Start Services:</strong>
+<pre class="prettyprint" style="margin-bottom: 0;font-size: 18px; line-height: 22px;" data-lang="zsh">
+$ fleetctl start dumbserver@1
+Unit dumbserver@1.service launched on 00d1d58c.../10.133.194.85
+$ fleetctl start dumbserver@2
+Unit dumbserver@2.service launched on 3d567ffd.../10.133.194.91
+</pre>
+
+<strong style="font-size: 22px;">Test Services:</strong>
+<pre class="prettyprint" style="font-size: 18px; line-height: 22px;" data-lang="zsh">
+$ curl -L 10.133.194.85:80/foo/bar # returns: Hello /foo/bar
+$ curl -L 10.133.194.91:80/foo/bar # returns: Hello /foo/bar
+$ etcdctl ls /services/dumbserver
+/services/dumbserver/core-1:1
+/services/dumbserver/core-2:2
+</pre>
+
+{% endblock %}

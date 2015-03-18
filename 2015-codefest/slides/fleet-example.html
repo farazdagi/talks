@@ -1,13 +1,32 @@
 <slide>
     <hgroup>
-        <h2>fleet example</h2>
+        <h2>fleet: example</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <pre class="prettyprint" style="font-size: 20px; line-height: 25px;" data-lang="zsh">
+[Unit]
+Description=MyDumbServer
+After=etcd.service
+After=docker.service
+
+[Service]
+User=core
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill dumbserver
+ExecStartPre=-/usr/bin/docker rm dumbserver
+ExecStartPre=/usr/bin/docker pull farazdagi/dumbserver
+ExecStart=/usr/bin/docker run --name dumbserver -p 80:80 farazdagi/dumbserver
+
+ExecStartPost=/usr/bin/etcdctl set /services/dumbserver/%H:%i '{Host: %H, port: 80}'
+ExecStop=/usr/bin/docker stop dumbserver
+ExecStopPost=/usr/bin/etcdctl rm /services/dumbserver/%H:%i
+
+[X-Fleet]
+Conflicts=dumbserver@*.service
+</pre>
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>

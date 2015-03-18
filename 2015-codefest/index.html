@@ -227,7 +227,7 @@ URL: https://code.google.com/p/io-2012-slides
     </ul>
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -249,7 +249,7 @@ URL: https://code.google.com/p/io-2012-slides
     <img style="position: absolute; top: 270px; left: 250px; width: 500px;" src="images/containers-vs-vms.png" />
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -280,7 +280,7 @@ $ sudo docker run -i -t ubuntu /bin/bash
     <img style="position: absolute; bottom: 80px; right: 50px; width: 500px;" src="images/docker-architecture.png" />
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -312,7 +312,7 @@ func main() {
 }</pre>
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -341,7 +341,7 @@ CMD ["dumbserver"]
     </ul>
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -377,7 +377,7 @@ Hello /foo/bar</pre>
 
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -397,7 +397,7 @@ Hello /foo/bar</pre>
     </ul>
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -421,7 +421,7 @@ envisioned.
     <img style="position: absolute; bottom: 60px; right: 50px; width: 350px;" src="images/what-about-security.png" />
     </article>
     <fgroup>
-        <h3>Using Clusters</h3>
+        <h3>OS-level Virtualization aka Containerization</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -560,7 +560,15 @@ curl -X POST https://api.digitalocean.com/v2/droplets \
         <h2>Check DO cluster</h2>
     </hgroup>
     <article class="bigger">
-        <pre style="" class="prettyprint" data-lang="zsh">
+        <h3>Create droplets:</h3>
+<pre style="" class="prettyprint" data-lang="zsh">
+$ env TOKEN=$TOKEN SSH_KEY_ID=$SSH_KEY_ID bin/create-droplet.sh core-1
+$ env TOKEN=$TOKEN SSH_KEY_ID=$SSH_KEY_ID bin/create-droplet.sh core-2
+$ env TOKEN=$TOKEN SSH_KEY_ID=$SSH_KEY_ID bin/create-droplet.sh core-3
+</pre>
+
+<h3>Login into any machine and check discovery:</h3>
+<pre style="" class="prettyprint" data-lang="zsh">
 # ssh into any of core-* boxes and see if cluster discovery actually worked:
 core@core-1 ~ $ fleetctl list-machines
 MACHINE         IP              METADATA
@@ -579,14 +587,21 @@ eecedbb6...     10.133.194.85   -
 </slide>
 <slide>
     <hgroup>
-        <h2>Service Discovery (etcd)</h2>
+        <h2>Service Configuration &amp; Discovery (etcd)</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
+        <p>etcd is:</p>
+    <ul>
+        <li>Actively developed (in Go)</li>
+        <li>Distributed Key-Value Store</li>
+        <li>Highly Available</li>
+        <li>Automatic Leader Election (via Raft)</li>
+        <li>Simple: CURLable HTTP API</li>
+        <li>Fast: Ks of writes per second (per instance)</li>
     </ul>
     </article>
     <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
+        <h3>Cluster Setup &amp; Configuration</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -595,14 +610,60 @@ eecedbb6...     10.133.194.85   -
 </slide>
 <slide>
     <hgroup>
-        <h2>Discovery API</h2>
+        <h2>Sample etcd API usage</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <pre class="prettyprint" style="font-size: 20px; line-height: 21px;" data-lang="zsh">
+core@core-1 ~ $ curl -L http://127.0.0.1:4001/version
+etcd 0.4.6
+
+core@core-1 ~ $ curl -L http://127.0.0.1:4001/v2/keys/foo -XPUT -d value=bar
+{
+    "action":"set",
+    "node":{
+        "key":"/foo",
+        "value":"bar",
+        "modifiedIndex":273,
+        "createdIndex":273
+    }
+}
+
+core@core-1 ~ $ curl -L http://127.0.0.1:4001/v2/keys/foo
+{
+    "action":"get",
+    "node":{
+        "key":"/foo",
+        "value":"bar",
+        "modifiedIndex":273,
+        "createdIndex":273
+    }
+}
+</pre>
+<img style="position: absolute; top: 90px; left: 630px; width: 150px;" src="images/check-version.png" />
+<img style="position: absolute; top: 230px; left: 730px; width: 150px;" src="images/set-key.png" />
+<img style="position: absolute; top: 490px; left: 630px; width: 150px;" src="images/get-key-value.png" />
     </article>
     <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
+        <h3>Cluster Setup &amp; Configuration</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>Clustering Approaches</h2>
+    </hgroup>
+    <article class="bigger">
+        <div class="build">
+    <img style="position: absolute; top: 160px; right: 50px; width: 350px;" src="images/etcd-on-all-nodes.png" />
+    <img style="position: absolute; bottom: 80px; right: 50px; width: 400px;" src="images/etcd-testing-cluster.png" />
+    <img style="position: absolute; top: 160px; left: 50px; width: 550px;" src="images/etcd-nodes.png" />
+</div>
+    </article>
+    <fgroup>
+        <h3>Cluster Setup &amp; Configuration</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -611,23 +672,28 @@ eecedbb6...     10.133.194.85   -
 </slide>
 
 <!-- Section 4 -->
-<slide class="segue dark nobackground">
+<!--<slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/logo.png"></aside>
     <hgroup class="auto-fadein">
         <h3>Часть 3</h3>
         <h2>Managing Cluster</h2>
     </hgroup>
 </slide>
+-->
         <slide>
     <hgroup>
         <h2>systemd overview</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
+            <p>systemd:</p>
+    <ul>
+        <li>init system: allows to start/stop/manage processes</li>
+        <li>you manage Docker containers via systemd unit files</li>
+        <li>built to replace Linux init system, and was successful in that regard</li>
     </ul>
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -636,14 +702,67 @@ eecedbb6...     10.133.194.85   -
 </slide>
 <slide>
     <hgroup>
-        <h2>systemd example</h2>
+        <h2>systemd: example</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <strong style="font-size: 24px;">/etc/systemd/system/dumbserver.service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="ini">
+[Unit]
+Description=MyDumbServer
+After=etcd.service
+After=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill dumbserver
+ExecStartPre=-/usr/bin/docker rm dumbserver
+ExecStartPre=/usr/bin/docker pull farazdagi/dumbserver
+ExecStart=/usr/bin/docker run --name dumbserver -p 80:80 farazdagi/dumbserver
+
+ExecStartPost=/usr/bin/etcdctl set /services/dumbserver/%H running
+ExecStop=/usr/bin/docker stop dumbserver
+ExecStopPost=/usr/bin/etcdctl rm /services/dumbserver/%H
+
+[Install]
+WantedBy=multi-user.target
+</pre>
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
+        <h2>systemd: running the example</h2>
+    </hgroup>
+    <article class="bigger">
+        <strong style="font-size: 24px;">Enable and start service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="zsh">
+$ cd /etc/systemd/system
+$ sudo systemctl enable dumbserver.service
+$ sudo systemctl start dumbserver.service
+</pre>
+
+<strong style="font-size: 24px;">Test Running Service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="zsh">
+$ curl -L localhost:80/foo/bar
+Hello /foo/bar
+$ docker ps
+$ journalctl -f -u dumbserver.service
+</pre>
+
+<strong style="font-size: 24px;">Stop Service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="zsh">
+$ sudo systemctl stop dumbserver.service
+</pre>
+
+    </article>
+    <fgroup>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -656,10 +775,13 @@ eecedbb6...     10.133.194.85   -
     </hgroup>
     <article class="bigger">
             <ul>
+        <li>tool that controls systemd at the cluster level</li>
+        <li>normal systemd unit files + few fleet-specific properties</li>
     </ul>
+    <img style="position: absolute; bottom: 80px; left: 200px; width: 600px;" src="images/fleet-architecture.png" />
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -668,14 +790,33 @@ eecedbb6...     10.133.194.85   -
 </slide>
 <slide>
     <hgroup>
-        <h2>fleet example</h2>
+        <h2>fleet: example</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <pre class="prettyprint" style="font-size: 20px; line-height: 25px;" data-lang="zsh">
+[Unit]
+Description=MyDumbServer
+After=etcd.service
+After=docker.service
+
+[Service]
+User=core
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill dumbserver
+ExecStartPre=-/usr/bin/docker rm dumbserver
+ExecStartPre=/usr/bin/docker pull farazdagi/dumbserver
+ExecStart=/usr/bin/docker run --name dumbserver -p 80:80 farazdagi/dumbserver
+
+ExecStartPost=/usr/bin/etcdctl set /services/dumbserver/%H:%i '{Host: %H, port: 80}'
+ExecStop=/usr/bin/docker stop dumbserver
+ExecStopPost=/usr/bin/etcdctl rm /services/dumbserver/%H:%i
+
+[X-Fleet]
+Conflicts=dumbserver@*.service
+</pre>
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>
@@ -684,84 +825,80 @@ eecedbb6...     10.133.194.85   -
 </slide>
 <slide>
     <hgroup>
-        <h2>journal logs</h2>
+        <h2>fleet: running the example</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <strong style="font-size: 22px;">Enable service:</strong>
+<pre class="prettyprint" style="margin-bottom: 0;font-size: 18px; line-height: 22px;" data-lang="zsh">
+$ fleetctl submit dumbserver\@.service
+$ fleetctl list-unit-files
+UNIT                    HASH    DSTATE          STATE           TARGET
+dumbserver@.service     063a727 inactive        inactive
+</pre>
+
+<strong style="font-size: 22px;">Start Services:</strong>
+<pre class="prettyprint" style="margin-bottom: 0;font-size: 18px; line-height: 22px;" data-lang="zsh">
+$ fleetctl start dumbserver@1
+Unit dumbserver@1.service launched on 00d1d58c.../10.133.194.85
+$ fleetctl start dumbserver@2
+Unit dumbserver@2.service launched on 3d567ffd.../10.133.194.91
+</pre>
+
+<strong style="font-size: 22px;">Test Services:</strong>
+<pre class="prettyprint" style="font-size: 18px; line-height: 22px;" data-lang="zsh">
+$ curl -L 10.133.194.85:80/foo/bar # returns: Hello /foo/bar
+$ curl -L 10.133.194.91:80/foo/bar # returns: Hello /foo/bar
+$ etcdctl ls /services/dumbserver
+/services/dumbserver/core-1:1
+/services/dumbserver/core-2:2
+</pre>
+
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>
                     </section>
     </aside>
 </slide>
-
-<!-- Section 5 -->
-<slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/logo.png"></aside>
-    <hgroup class="auto-fadein">
-        <h3>Часть 5</h3>
-        <h2>Updating Cluster</h2>
-    </hgroup>
-</slide>
-        <slide>
+<slide>
     <hgroup>
-        <h2>Reboot Manager (locksmith)</h2>
+        <h2>Updating CoreOS</h2>
     </hgroup>
     <article class="bigger">
             <ul>
-    </ul>
-    </article>
-    <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                    </section>
-    </aside>
-</slide>
-
-
-<!-- Section 6 -->
-<slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/logo.png"></aside>
-    <hgroup class="auto-fadein">
-        <h3>Часть 6</h3>
-        <h2>Conclusion and Take-Aways</h2>
-    </hgroup>
-</slide>
-        <slide>
-    <hgroup>
-        <h2>Sample Application Setup</h2>
-    </hgroup>
-    <article class="biggest">
+        <li>Omaha Protocol</li>
+        <li>Pull based model</li>
+        <li>Dual-partion scheme</li>
+        <li>Reboot manager (locksmith)<br />
+            <div class="smaller" style="margin-left: 50px;">
+            Restart strategies:
             <ul>
-        <li>Small Cluster (3-9 nodes)</li>
-        <li>Round-robin load balancer</li>
-        <li>
-            Apps redundantly distributed for HA
+                <li>wait for etcd lock</li>
+                <li>best effort (default)</li>
+                <li>immediate restart</li>
+            </ul>
+            </div>
         </li>
     </ul>
-    <img style="position: absolute; top: 80px; right: 50px; width: 200px;" src="images/small-cluster.png" />
+    <img style="position: absolute; bottom: 280px; right: 100px; width: 250px;" src="images/updating-coreos.png" />
     </article>
     <fgroup>
-        <h3>Introduction</h3>
+        <h3>Updating Cluster</h3>
     </fgroup>
     <aside class="note">
         <section>
-                <ul>
-        <li>Step-by-step instruction on how to TRY various CoreOS components</li>
-    </ul>
-        </section>
+                    </section>
     </aside>
 </slide>
+
+
 <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/logo.png"></aside>
     <article class="flexbox vleft auto-fadein">
         <h2>Thank You!</h2>
+        <h2 style="position: absolute; top: 50px; left: 50px;">Conclusion &amp; Take-Aways</h2>
         <p>&nbsp;</p>
     </article>
     <p class="auto-fadein" data-config-contact>
@@ -769,11 +906,6 @@ eecedbb6...     10.133.194.85   -
     </p>
 </slide>
 
-<slide class="logolastslide nobackground">
-    <article class="flexbox vcenter">
-        <span><img src="images/logo.png"></span>
-    </article>
-</slide>
 
 <slide class="backdrop"></slide>
 

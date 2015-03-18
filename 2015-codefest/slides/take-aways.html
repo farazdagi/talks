@@ -1,10 +1,9 @@
-{% extends 'slides/layout/normal-slide.twig' %}
-{% block title 'Sample Application Setup' %}
-{% block style 'biggest' %}
-{% block footer 'Introduction' %}
-
-{% block content %}
-    <ul>
+<slide>
+    <hgroup>
+        <h2>Take Aways &amp; Conclusion</h2>
+    </hgroup>
+    <article class="biggest">
+            <ul>
         <li>Small Cluster (3-9 nodes)</li>
         <li>Round-robin load balancer</li>
         <li>
@@ -12,10 +11,15 @@
         </li>
     </ul>
     <img style="position: absolute; top: 80px; right: 50px; width: 200px;" src="images/small-cluster.png" />
-{% endblock %}
-
-{% block notes %}
-    <ul>
+    </article>
+    <fgroup>
+        <h3>Introduction</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                <ul>
         <li>Step-by-step instruction on how to TRY various CoreOS components</li>
     </ul>
-{% endblock %}
+        </section>
+    </aside>
+</slide>

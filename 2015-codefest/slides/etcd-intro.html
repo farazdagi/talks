@@ -1,13 +1,20 @@
 <slide>
     <hgroup>
-        <h2>Service Discovery (etcd)</h2>
+        <h2>Service Configuration &amp; Discovery (etcd)</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
+        <p>etcd is:</p>
+    <ul>
+        <li>Actively developed (in Go)</li>
+        <li>Distributed Key-Value Store</li>
+        <li>Highly Available</li>
+        <li>Automatic Leader Election (via Raft)</li>
+        <li>Simple: CURLable HTTP API</li>
+        <li>Fast: Ks of writes per second (per instance)</li>
     </ul>
     </article>
     <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
+        <h3>Cluster Setup &amp; Configuration</h3>
     </fgroup>
     <aside class="note">
         <section>

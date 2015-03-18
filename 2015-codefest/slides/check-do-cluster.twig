@@ -4,6 +4,14 @@
 {% block footer 'Cluster Setup &amp; Configuration' %}
 
 {% block content %}
+<h3>Create droplets:</h3>
+<pre style="" class="prettyprint" data-lang="zsh">
+$ env TOKEN=$TOKEN SSH_KEY_ID=$SSH_KEY_ID bin/create-droplet.sh core-1
+$ env TOKEN=$TOKEN SSH_KEY_ID=$SSH_KEY_ID bin/create-droplet.sh core-2
+$ env TOKEN=$TOKEN SSH_KEY_ID=$SSH_KEY_ID bin/create-droplet.sh core-3
+</pre>
+
+<h3>Login into any machine and check discovery:</h3>
 <pre style="" class="prettyprint" data-lang="zsh">
 # ssh into any of core-* boxes and see if cluster discovery actually worked:
 core@core-1 ~ $ fleetctl list-machines

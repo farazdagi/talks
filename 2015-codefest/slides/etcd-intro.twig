@@ -1,9 +1,16 @@
 {% extends 'slides/layout/normal-slide.twig' %}
-{% block title 'Service Discovery (etcd)' %}
+{% block title 'Service Configuration &amp; Discovery (etcd)' %}
 {% block style 'bigger' %}
-{% block footer 'Часть 1: Обзор CoreOS' %}
+{% block footer 'Cluster Setup &amp; Configuration' %}
 
 {% block content %}
+<p>etcd is:</p>
     <ul>
+        <li>Actively developed (in Go)</li>
+        <li>Distributed Key-Value Store</li>
+        <li>Highly Available</li>
+        <li>Automatic Leader Election (via Raft)</li>
+        <li>Simple: CURLable HTTP API</li>
+        <li>Fast: Ks of writes per second (per instance)</li>
     </ul>
 {% endblock %}

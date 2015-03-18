@@ -1,13 +1,40 @@
 <slide>
     <hgroup>
-        <h2>Discovery API</h2>
+        <h2>Sample etcd API usage</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <pre class="prettyprint" style="font-size: 20px; line-height: 21px;" data-lang="zsh">
+core@core-1 ~ $ curl -L http://127.0.0.1:4001/version
+etcd 0.4.6
+
+core@core-1 ~ $ curl -L http://127.0.0.1:4001/v2/keys/foo -XPUT -d value=bar
+{
+    "action":"set",
+    "node":{
+        "key":"/foo",
+        "value":"bar",
+        "modifiedIndex":273,
+        "createdIndex":273
+    }
+}
+
+core@core-1 ~ $ curl -L http://127.0.0.1:4001/v2/keys/foo
+{
+    "action":"get",
+    "node":{
+        "key":"/foo",
+        "value":"bar",
+        "modifiedIndex":273,
+        "createdIndex":273
+    }
+}
+</pre>
+<img style="position: absolute; top: 90px; left: 630px; width: 150px;" src="images/check-version.png" />
+<img style="position: absolute; top: 230px; left: 730px; width: 150px;" src="images/set-key.png" />
+<img style="position: absolute; top: 490px; left: 630px; width: 150px;" src="images/get-key-value.png" />
     </article>
     <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
+        <h3>Cluster Setup &amp; Configuration</h3>
     </fgroup>
     <aside class="note">
         <section>

@@ -1,9 +1,12 @@
 {% extends 'slides/layout/normal-slide.twig' %}
 {% block title 'fleet overview' %}
 {% block style 'bigger' %}
-{% block footer 'Часть 3: Cluster Management' %}
+{% block footer 'Running Services in CoreOS Clusters' %}
 
 {% block content %}
     <ul>
+        <li>tool that controls systemd at the cluster level</li>
+        <li>normal systemd unit files + few fleet-specific properties</li>
     </ul>
+    <img style="position: absolute; bottom: 80px; left: 200px; width: 600px;" src="images/fleet-architecture.png" />
 {% endblock %}

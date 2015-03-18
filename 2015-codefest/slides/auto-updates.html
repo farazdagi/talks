@@ -1,13 +1,27 @@
 <slide>
     <hgroup>
-        <h2>Reboot Manager (locksmith)</h2>
+        <h2>Updating CoreOS</h2>
     </hgroup>
     <article class="bigger">
             <ul>
+        <li>Omaha Protocol</li>
+        <li>Pull based model</li>
+        <li>Dual-partion scheme</li>
+        <li>Reboot manager (locksmith)<br />
+            <div class="smaller" style="margin-left: 50px;">
+            Restart strategies:
+            <ul>
+                <li>wait for etcd lock</li>
+                <li>best effort (default)</li>
+                <li>immediate restart</li>
+            </ul>
+            </div>
+        </li>
     </ul>
+    <img style="position: absolute; bottom: 280px; right: 100px; width: 250px;" src="images/updating-coreos.png" />
     </article>
     <fgroup>
-        <h3>Часть 1: Обзор CoreOS</h3>
+        <h3>Updating Cluster</h3>
     </fgroup>
     <aside class="note">
         <section>

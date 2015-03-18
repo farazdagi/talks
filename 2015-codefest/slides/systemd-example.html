@@ -1,13 +1,32 @@
 <slide>
     <hgroup>
-        <h2>systemd example</h2>
+        <h2>systemd: example</h2>
     </hgroup>
     <article class="bigger">
-            <ul>
-    </ul>
+        <strong style="font-size: 24px;">/etc/systemd/system/dumbserver.service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="ini">
+[Unit]
+Description=MyDumbServer
+After=etcd.service
+After=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill dumbserver
+ExecStartPre=-/usr/bin/docker rm dumbserver
+ExecStartPre=/usr/bin/docker pull farazdagi/dumbserver
+ExecStart=/usr/bin/docker run --name dumbserver -p 80:80 farazdagi/dumbserver
+
+ExecStartPost=/usr/bin/etcdctl set /services/dumbserver/%H running
+ExecStop=/usr/bin/docker stop dumbserver
+ExecStopPost=/usr/bin/etcdctl rm /services/dumbserver/%H
+
+[Install]
+WantedBy=multi-user.target
+</pre>
     </article>
     <fgroup>
-        <h3>Часть 3: Cluster Management</h3>
+        <h3>Running Services in CoreOS Clusters</h3>
     </fgroup>
     <aside class="note">
         <section>

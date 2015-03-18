@@ -1,0 +1,27 @@
+{% extends 'slides/layout/normal-slide.twig' %}
+{% block title 'systemd: running the example' %}
+{% block style 'bigger' %}
+{% block footer 'Running Services in CoreOS Clusters' %}
+
+{% block content %}
+<strong style="font-size: 24px;">Enable and start service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="zsh">
+$ cd /etc/systemd/system
+$ sudo systemctl enable dumbserver.service
+$ sudo systemctl start dumbserver.service
+</pre>
+
+<strong style="font-size: 24px;">Test Running Service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="zsh">
+$ curl -L localhost:80/foo/bar
+Hello /foo/bar
+$ docker ps
+$ journalctl -f -u dumbserver.service
+</pre>
+
+<strong style="font-size: 24px;">Stop Service:</strong>
+<pre class="prettyprint" style="font-size: 20px; line-height: 24px;" data-lang="zsh">
+$ sudo systemctl stop dumbserver.service
+</pre>
+
+{% endblock %}
