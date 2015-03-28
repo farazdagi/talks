@@ -35,8 +35,8 @@ URL: https://code.google.com/p/io-2012-slides
     {% set slides = [
         'paradigm-shift',
         'warehouse-scale-machine',
-        'top-features',
         'architecture',
+        'top-features',
         'coreos-is',
     ] %}
     {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
@@ -44,7 +44,6 @@ URL: https://code.google.com/p/io-2012-slides
 <!-- Section 2 -->
 <!--{% include 'slides/segue-use-cluster.twig' %}-->
     {% set slides = [
-        'distributed-systems-are-hard',
         'why-containers',
         'docker-intro',
         'dockerize-app1',
@@ -63,8 +62,7 @@ URL: https://code.google.com/p/io-2012-slides
         'start-do-cluster',
         'check-do-cluster',
         'etcd-intro',
-        'etcd-discovery-api',
-        'etcd-cluster'
+        'etcd-discovery-api'
     ] %}
     {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
 
@@ -77,10 +75,10 @@ URL: https://code.google.com/p/io-2012-slides
         'fleet-intro',
         'fleet-example',
         'fleet-example-run',
-        'auto-updates'
+        'auto-updates',
+        'etcd-cluster'
     ] %}
     {% for slide in slides %}{% include 'slides/' ~ slide ~ '.twig' %}{% endfor  %}
-
 
 {% include 'slides/misc/thank-you.twig' %}
 
