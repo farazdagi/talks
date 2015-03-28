@@ -147,6 +147,25 @@ URL: https://code.google.com/p/io-2012-slides
 </slide>
 <slide>
     <hgroup>
+        <h2>Overall Architecture</h2>
+    </hgroup>
+    <article class="bigger">
+            <img style="position: absolute; top: 160px; right: 50px;" src="images/redesigned-split.png" />
+    <img style="position: absolute; top: 120px; left: 75px; width:400px;" src="images/previous-systems.png" />
+    <div class="build">
+    <img style="position: absolute; bottom: 61px; left: 75px; width:400px;" src="images/new-systems.png" />
+    </div>
+    </article>
+    <fgroup>
+        <h3>CoreOS: Mission &amp; Goals</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
+<slide>
+    <hgroup>
         <h2>Top Features</h2>
     </hgroup>
     <article class="bigger">
@@ -161,25 +180,6 @@ URL: https://code.google.com/p/io-2012-slides
     infrastructure stacks.
     <small style="position: absolute; bottom: 0; right: 90px; font-size: 0.6em;">from https://coreos.com</small>
     </p>
-    </article>
-    <fgroup>
-        <h3>CoreOS: Mission &amp; Goals</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                    </section>
-    </aside>
-</slide>
-<slide>
-    <hgroup>
-        <h2>Overall Architecture</h2>
-    </hgroup>
-    <article class="bigger">
-            <img style="position: absolute; top: 160px; right: 50px;" src="images/redesigned-split.png" />
-    <img style="position: absolute; top: 120px; left: 75px; width:400px;" src="images/previous-systems.png" />
-    <div class="build">
-    <img style="position: absolute; bottom: 61px; left: 75px; width:400px;" src="images/new-systems.png" />
-    </div>
     </article>
     <fgroup>
         <h3>CoreOS: Mission &amp; Goals</h3>
@@ -215,29 +215,6 @@ URL: https://code.google.com/p/io-2012-slides
 </slide>
 -->
         <slide>
-    <hgroup>
-        <h2>Distributed Systems are HARD</h2>
-    </hgroup>
-    <article class="bigger">
-            <ul style="">
-        <li>Node failures are <strong>*inevitable*</strong> (Fault Tolerance).</li>
-        <li>More expensive: to write software and to maintain infrastructure</li>
-        <li>Node coordiantion is not trivial (it is HARD)</li>
-        <li>To build HA system, you have to design your apps appropriately.</li>
-    </ul>
-    </article>
-    <fgroup>
-        <h3>OS-level Virtualization aka Containerization</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-            <ul>
-    <li>More info: <a href="http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/">Notes on DS for young bloods</a></li>
-</ul>
-        </section>
-    </aside>
-</slide>
-<slide>
     <hgroup>
         <h2>Why containers?</h2>
     </hgroup>
@@ -651,25 +628,6 @@ core@core-1 ~ $ curl -L http://127.0.0.1:4001/v2/keys/foo
                     </section>
     </aside>
 </slide>
-<slide>
-    <hgroup>
-        <h2>Clustering Approaches</h2>
-    </hgroup>
-    <article class="bigger">
-        <div class="build">
-    <img style="position: absolute; top: 160px; right: 50px; width: 350px;" src="images/etcd-on-all-nodes.png" />
-    <img style="position: absolute; bottom: 80px; right: 50px; width: 400px;" src="images/etcd-testing-cluster.png" />
-    <img style="position: absolute; top: 160px; left: 50px; width: 550px;" src="images/etcd-nodes.png" />
-</div>
-    </article>
-    <fgroup>
-        <h3>Cluster Setup &amp; Configuration</h3>
-    </fgroup>
-    <aside class="note">
-        <section>
-                    </section>
-    </aside>
-</slide>
 
 <!-- Section 4 -->
 <!--<slide class="segue dark nobackground">
@@ -892,7 +850,25 @@ $ etcdctl ls /services/dumbserver
                     </section>
     </aside>
 </slide>
-
+<slide>
+    <hgroup>
+        <h2>Clustering Approaches</h2>
+    </hgroup>
+    <article class="bigger">
+        <div class="build">
+    <img style="position: absolute; top: 160px; right: 50px; width: 350px;" src="images/etcd-on-all-nodes.png" />
+    <img style="position: absolute; bottom: 80px; right: 50px; width: 400px;" src="images/etcd-testing-cluster.png" />
+    <img style="position: absolute; top: 160px; left: 50px; width: 550px;" src="images/etcd-nodes.png" />
+</div>
+    </article>
+    <fgroup>
+        <h3>Cluster Setup &amp; Configuration</h3>
+    </fgroup>
+    <aside class="note">
+        <section>
+                    </section>
+    </aside>
+</slide>
 
 <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/logo.png"></aside>
